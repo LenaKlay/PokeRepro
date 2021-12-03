@@ -35,22 +35,15 @@ rrtools::use_compendium("../Pickachu/", open = FALSE)
   
 This function will create 4 new documents : 2 visible (DESCRIPTION and NAMESPACE) and 2 invisible (.Rhistory, .Rbuildignore.). DESCRIPTION is an important file : it will be used to store the packages versions of the project, for good reproducible work ! 
 
-<<<<<<< HEAD
+
 ![](screen_shots/1_f.png){width=400px}
-=======
-<<<<<<< HEAD
+
 ```{r, echo=FALSE, fig.cap="Your are doing a great job - Pokepedia", out.width = '50%'}
 knitr::include_graphics("Aligatueur.png")
 ```
 
-### 4) Construct your project architecture  
-=======
-![](screen_shots/1_f.png){width=200px}
->>>>>>> d0d0331c63c6eb3404ef40523f89d98036d50f84
->>>>>>> 98099650469ff8e3cccdd59ce3de9039e8e164a8
 
-
-# Complete your project architecture  
+## Complete your project architecture  
 
 Now you can complete your folder architecture with more personal folders. Because you may work with datas, I suggest you to do something like that: 
 
