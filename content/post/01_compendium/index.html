@@ -1,0 +1,60 @@
+---
+title: "Let's create a research compendium"
+author: "Erwan"
+date: "12/2/2021"
+categories: ["R"]
+tags: ["voila"]
+bibliography: "biblio/biblio.bib"
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<style> body {text-align: justify} </style>
+<div id="creat-a-new-repository-on-github" class="section level3">
+<h3>1) Creat a new repository on GitHub</h3>
+<p>Connect to your GitHub account. Go on <strong>Repositories</strong> tab and click to <strong>New</strong>. For the following exemple I suggest you to name your new GitHub repository <strong>Pickachu</strong> and add a README file, a licence (GNU Affero General Public License v3.0) and a .gitignore (R). By doing that you will create a new repository on GitHub containing 3 files : a .gitignore, a LICENSE and a. README.md visible on github. Then go on <strong>code</strong> tab and copy the SSH link.</p>
+</div>
+<div id="install-the-github-repository-on-your-computer" class="section level3">
+<h3>2) Install the GitHub repository on your computer</h3>
+<p>Now open Rstudio and go here <em>file</em> &gt; <em>new project</em> &gt; <em>version control</em> &gt; <em>git</em> past the SSH link and choose the location of the file <strong>Pickachu</strong> that will contain your future project.
+Now if you open your <strong>Pickachu</strong> file on you local computer you will see 3 files: a .Rproj, the LICENSE and the README.md. However 3 others invisible files are in your <strong>Pickachu</strong> file: a .gitignore, a .git and a .Rproj.user. They don’t appear because they are hidden. However you can see them on R studio, GitHub and if you reveal hidden files.</p>
+</div>
+<div id="create-a-research-compendium" class="section level3">
+<h3>3) Create a research compendium</h3>
+<p>A research compendium it’s just a folder providing data, code, and documentation for reproducing a scientific workflow. To create it, open again your R Studio window and be sure to be inside your project that appear at the right top corner of your Rstudio, here :</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="image0.png" alt="Check that you are inside your project !" width="50%" />
+<p class="caption">
+Figure 1: Check that you are inside your project !
+</p>
+</div>
+<p>Now go in the R console and do:<br />
+<code>rrtools::use_compendium("../Pickachu/", open = FALSE)</code>.<br />
+This function will create a compendium inside your project. By doing so you will create 4 new documents: 2 visible: DESCRIPTION and NAMESPACE and 2 invisible: .Rhistory, .Rbuildignore. DESCRIPTION is an important file because it will save all the packages version you will use during your study in order that other will reproduce your work easily.</p>
+</div>
+<div id="construct-your-project-architecture" class="section level3">
+<h3>4) Construct your project architecture</h3>
+<p>Now you can complete your folder architecture of your project. Because you may work in science, I suggest you to do something like that:</p>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="image1.png" alt="This is a cool architecture" width="65%" />
+<p class="caption">
+Figure 2: This is a cool architecture
+</p>
+</div>
+<p>Bellow see some general advises:</p>
+<ul>
+<li><p>It’s important to clearly separate the data from the analysis from the outputs. In each folder you will have various script to manipulate, analyse and plot the data.</p></li>
+<li><p>At the root it’s recommended to create a make.R file. This R file will be the master of all the other R files. In this file you will call all the other script contained in you various folders in other to run your whole study in one run.</p></li>
+<li><p>You can also create a R folder. This folder will contain various script only composed of the various functions you will need in your project.</p></li>
+</ul>
+<p>Do you know that they are many articles about Pokemon <span class="citation">(<a href="#ref-Kawahara2018" role="doc-biblioref">Kawahara, Noto, and Kumagai 2018</a>)</span> ?</p>
+<div id="references" class="section level5 unnumbered">
+<h5>References</h5>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-Kawahara2018" class="csl-entry">
+Kawahara, Shigeto, Atsushi Noto, and Gakuji Kumagai. 2018. <span>“<span class="nocase">Sound symbolic patterns in Pok<span class="nocase">é</span>mon names</span>.”</span> <em>Phonetica</em> 75 (3): 219–44. <a href="https://doi.org/10.1159/000484938">https://doi.org/10.1159/000484938</a>.
+</div>
+</div>
+</div>
+</div>
