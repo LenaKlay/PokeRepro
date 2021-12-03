@@ -3,12 +3,11 @@ title: "Use Git and  Github"
 author: "Léna Klay"
 date: 2021-12-01
 categories: ["R"]
-tags: ["Github", "R-project"]
+tags: ["voilou"]
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)
-library(cowplot)
 ```
 
 ## Why Git ?
@@ -30,21 +29,33 @@ To initialize a Git repository from your project, you can use a simple command f
 usethis::use_git()
 ```
 
-RStudio will ask you to restart, and after that, you will observe a new tab **Git** is RStudio :
+![](index_files/screen_shots/3_a.png){width=500px}
+![](index_files/screen_shots/3_b.png){width=500px}
 
-![](index_files/images/tab_git.png){width=500px}
+RStudio will ask you to restart, and after that, you will observe a new tab **Git** is RStudio, and a bunch of new files and folders :
 
-Your timeline is now ready to use ! Each time you will make a modification, it will appear in this section.
+![](index_files/screen_shots/3_c.png){width=500px}
 
-![](index_files/images/tab_git1.png){width=500px}
 
+
+Your timeline is now ready to use ! Each time you will make a modification, it will appear in the git tab. Let's try ! We are going to change the description file to indicate what your project is about : 
+
+![](index_files/screen_shots/3_d.png){width=500px}
+
+The modification on the description file is now visible in the git tab : 
+
+![](index_files/screen_shots/3_e.png){width=500px}
 
 To take a snapshot of your project (i.e. to save the actual version of your project), you need to select all the modifications and click on the button `commit`.
 
-![](index_files/images/tab_git2.png){width=500px}
-A new window will pop, with detail of the modifications. Before taking the snapshot (before committing), write a comment so you know what modifications correspond to this new version. When that is done, you can click on the button `commit` : the snapshot is done.
+![](index_files/screen_shots/3_f.png){width=500px}
 
-![](index_files/images/tab_git3.png){width=500px}
+
+A new window will pop, with detail of the modifications. Before taking the snapshot (before committing), write a comment so you know what modifications correspond to this new version. When that is done, you can click on the button `commit` : the snapshot is done. The git tab is clean again.
+
+![](index_files/screen_shots/3_g.png){width=500px}
+
+
 
 ## From local to distance
 
@@ -54,30 +65,34 @@ The easiest way to manage Git repositories is to use GitHub. It's a cloud-based 
 usethis::use_github()
 ```
 
+![](index_files/screen_shots/4_a.png){width=500px}
+![](index_files/screen_shots/4_b.png){width=500px}
+
+
 Since GitHub is a bit grumpy with token, if you get an error make sure you have done well the last instruction of the toolbox file (available 
 [here](https://frbcesab.github.io/datatoolbox/instructions.html) ) :
 
 ![](index_files/images/github_pat.png){width=500px}
-If everything went well, a new repository GitHub has been created.  
+If everything went well, a new repository has been created in your GitHub account.
 
-```{r, echo=FALSE}
-ggdraw() + 
-  draw_image("index_files/images/git6.png", width = 0.2) + 
-  draw_image("index_files/images/git2.png", width = 0.2, x = 0.2) +
-  draw_image("index_files/images/git3.jpg", width = 0.2, x = 0.4) +
-  draw_image("index_files/images/git4.png", width = 0.2, x = 0.6) +
-  draw_image("index_files/images/git5.png", width = 0.2, x = 0.8)
-```
+![](index_files/screen_shots/4_c.png){width=1000px}
 
+To do everything perfectly, you need to had a README.md file, to inform everyone what your project is about. To do so click on 'Add a README' and complete the file.
+
+![](index_files/screen_shots/4_d.png){width=1000px}
+![](index_files/screen_shots/4_e.png){width=1000px}
+Don't forget to commit your change... and that's it, you are now ready to work ! 
 
 
-### 1) Creat a new repository on GitHub  
+# From Github to RStudio : the other way to do it
 
-Connect to your GitHub account. Go on **Repositories** tab and click to **New**. For the following exemple I suggest you to name your new GitHub repository **Pickachu** and add a README file, a licence (GNU Affero General Public License v3.0) and a .gitignore (R). By doing that you will create a new repository on GitHub containing 3 files : a .gitignore, a LICENSE and a. README.md visible on github. Then go on **code** tab and copy the SSH link.  
+Another (and simpler) way to do this is to create a project from GitHub and to upload it in your computer (locally). To do so, connect to your GitHub account, go in **Repositories** tab and click to **New**. Allow GitHub to add a README file, a licence (GNU Affero General Public License v3.0) and a .gitignore (R). The new repository created on GitHub containing 3 files : a .gitignore, a LICENSE and a. README.md visible on github. Then go on **code** tab and copy the SSH link.  
 
-### 2) Install the GitHub repository on your computer 
+Now open Rstudio and go here *file* > *new project* > *version control* > *git* past the SSH link and choose the location of the file that will contain your future project. This new project will immediately be linked to your GitHub repository. Once the project is created locally you will see 3 files: a .Rproj, the LICENSE and the README.md. However 3 others invisible files are created : a .gitignore, a .git and a .Rproj.user. They are hidden, but you can see them on R studio or GitHub and if you reveal hidden files. You can now complete your compendium by creating the different file as in the first part of this tutorial. 
 
-Now open Rstudio and go here *file* > *new project* > *version control* > *git* past the SSH link and choose the location of the file **Pickachu** that will contain your future project. 
-Now if you open your **Pickachu** file on you local computer you will see 3 files: a .Rproj, the LICENSE and the README.md. However 3 others invisible files are in your **Pickachu** file: a .gitignore, a .git and a .Rproj.user. They don’t appear because they are hidden. However you can see them on R studio, GitHub and if you reveal hidden files. 
 
+<br/>
+
+
+![](index_files/images/octocats.png){width=800px}
 
