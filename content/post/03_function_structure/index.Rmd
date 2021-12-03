@@ -1,26 +1,50 @@
 ---
-title: "Creat function and adapt structure"
+title: "Create function and adapt structure"
 author: "Erwan"
-date: 2021-12-01T21:13:14-05:00
+date: 2021-11-30
 categories: ["R"]
 tags: ["tmtcbythecc"]
 ---
+
+How to code ? 
+package::function 
+
+usethis:unsepackage(package3) pour rajouter package3 au fichier DESCRIPTION 
 
 Now you are suppose to have a beautiful project structure link to gitHub. Now that we finished to create the basis of the project we will start it ! We will beging by creat a new function. 
 
 To do so we will create a new script. As we said we will use the R file to put inside R scripts that construct functions. The name of the script is really important, we will call it 01_clean_data_function.R. Each script that create function will finish by "function". We will create a function to clean the dataset.  
 
+
 We open 01_clean_data_function.R and we write : 
 
 ```{r, eval=FALSE}
 pokeclean <- function(poke){
-  poke2 <- poke[-rowSums(is.na(poke[,])) == 0, ]
-  poke3 <- poke2[,-c()]
+  poke2 <- poke[-poke$generation %in% c("4", "5", "6", "7"), ]
+  poke3 <- poke2[,-which(names(poke2) %in% c("japanese_name","classfication"))]
   return(poke3)
 }
 ```
 
-```{r}
-read.csv("~/Desktop/PHD1/Formation/Reproductibility/PokeRepro/")
+```{r, eval=FALSE, echo=FALSE}
+poke <- read.csv("~/Desktop/PHD1/Formation/Reproductibility/PokeRepro/data/pokemon.csv")
 ```
+
+voila  voila 
+
+When you create a function you also have to 
+
+-on creer une function dans le dossier R “01_clean_data_function”
+-dans analysis on creer “01_clean_data.R”
+
+-on creer une function dans le dossier R “02_??_function.R”
+-dans analysis on creer “02_???.R”
+
+-dans analysis on creer “03_which_type.R” 
+-dans ouputs on creer “03_which_type_barplot.png”  
+-dans ouputs on creer “03_which_type_camemmbert.png”  
+ 
+-dans analysis on creer “04_regression_weight_attack.R” 
+-dans ouputs on creer “04_regression_weight_attack.png” 
+-dans ouputs on creer “04_regression_weight_attack.RDATA”
 
