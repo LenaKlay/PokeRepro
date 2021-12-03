@@ -40,8 +40,17 @@ absolute path.</p>
 <p><span style="color: grey;"><em>In our example</em>, we will load the <em>Pokemon</em> dataset, which is in the <code>data folder</code> on the project root.<br />
 We use </span> <span style="color: purple;">the here() function of the here package</span> </span> <span style="color: grey;">: the different arguments = parameters of the function are the folders of the path leading to the file and the name of the file to open as follows: </span></p>
 <pre class="r"><code> # give the relative path to the data and read the data:
-  # data_poke &lt;- readr::read_csv(
-  #   here::here(&quot;data&quot;, &quot;pokemon.csv&quot;)
-  # )</code></pre>
-<p>tous les chemins relatifs sont définis à la racine (répertoire qui contient tout le reste) du projet dans le fichier make.R (aide: package here avec la fonction here() à qui on donne un chemin relatif et la fonction reconstruit un chemin absolu: donc marche chez tout le monde car ide relatif mais absolu différent) -&gt; utiliser les Projets R qui utilisent la racine du projet comme répertoire de travail -&gt; pas de setwd(), on créé des RProjects!</p>
+  data_poke &lt;- readr::read_csv(here::here(&quot;data&quot;, &quot;pokemon.csv&quot;))</code></pre>
+<pre><code>## Rows: 801 Columns: 41</code></pre>
+<pre><code>## -- Column specification --------------------------------------------------------
+## Delimiter: &quot;,&quot;
+## chr  (7): abilities, capture_rate, classfication, japanese_name, name, type1...
+## dbl (34): against_bug, against_dark, against_dragon, against_electric, again...</code></pre>
+<pre><code>## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p><strong>NOTE:</strong> Using package_name::function_name and not <code>library(package_name)</code> because
+different functions belonging to different packages can have the same name, thus
+using this coding style helps the code readability and prevent conflicts.</p>
+<p>Then, we must</p>
 </div>
