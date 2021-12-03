@@ -49,10 +49,10 @@ loading the dependencies your project relies on, functions you have coded,
 sourcing scripts containing code for your analysis *etc.*
 
 
-<span style="color: aquamarine;">##### 1 - Load the data and depencies </span> 
+<span style="color: aquamarine;">1 - Load the data and depencies </span> 
 
 
-The first thing to code in the `make.R` file is to **automatise the data loading**.  
+* The first thing to code in the `make.R` file is to **automatise the data loading**.  
 To do so you must use <span style="color: purple;">the here package</span> 
 ([link to the here website](https://here.r-lib.org/)): it helps to use **relative paths** 
 (defined on the project root) instead of absolute ones as everyone as a different 
@@ -64,13 +64,26 @@ We use </span> <span style="color: purple;">the here() function of the here pack
 
 ```{r, eval = FALSE}
  # give the relative path to the data and read the data:
-  # data_poke <- readr::read_csv(
-  #   here::here("data", "pokemon.csv")
-  # )
+  data_poke <- readr::read_csv(here::here("data", "pokemon.csv"))
+```
+ 
+
+**NOTE:** Using package_name::function_name and not `library(package_name)` because
+different functions belonging to different packages can have the same name, thus
+using this coding style helps the code readability and prevent conflicts.
+
+
+* Then, we must **automatise dependencies loading** that is to say the name of the 
+packages used in the functions we have created and defined.  
+
+*Reminder:* In the tutorial *03 - Create and define your first R function and analysis script*, these dependencies have been added to the `Import` part of the `DESCRIPTION file` by
+using the following command:
+
+
+```{r, eval = FALSE}
+# command to add dependencies to the DESCRIPTION file:
+usethis::use_package("name_of_the_package")
 ```
 
-
-
-tous les chemins relatifs sont définis à la racine (répertoire qui contient tout le reste) du projet dans le fichier make.R (aide: package here avec la fonction here() à qui on donne un chemin relatif et la fonction reconstruit un chemin absolu: donc marche chez tout le monde car ide relatif mais absolu différent) -> utiliser les Projets R qui utilisent la racine du projet comme répertoire de travail -> pas de setwd(), on créé des RProjects!
 
 
