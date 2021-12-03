@@ -13,7 +13,7 @@ tags: ["Reproducible_Research"]
 When you are coding, your life is a succession of: launching your code, 
 waiting while it runs, discovering an issue and ... restarting from scratch: 
 
-![](index_files/images/poke_crying.jpg){width=200px}
+![Artwork from Pokemon USA](index_files/images/poke_crying.jpg){width=200px}
 
 
 So, to make your code life easier you can **automatised your worklow so that 
@@ -30,7 +30,7 @@ In this tutorial, we will see the two methods starting with the `make.R` file.
 
 
 
-## Using the `make.R` file
+## A - Using the `make.R` file
 
 
 In the tutorial *01 Let's Create a Research Compendium!*, you have already 
@@ -40,7 +40,6 @@ created a `make.R` file on the project root.  If not, you can create it by using
 ```{r, eval = FALSE}
 # Command to create a make.R file on the project root if not done before:
 file.create("make.R")
-
 ```
 
 
@@ -49,7 +48,7 @@ loading the dependencies your project relies on, functions you have coded,
 sourcing scripts containing code for your analysis *etc.*
 
 
-<span style="color: aquamarine;">1 - Load the data and depencies </span> 
+<span style="color: aquamarine;">A - 1 - Load the data and depencies </span> 
 
 
 * The first thing to code in the `make.R` file is to **automatise the data loading**.  
@@ -58,12 +57,12 @@ To do so you must use <span style="color: purple;">the here package</span>
 (defined on the project root) instead of absolute ones as everyone as a different 
 absolute path. 
 
-<span style="color: grey;">*In our example*, we will load the *Pokemon* dataset, which is in the `data folder` on the project root.  
-We use </span> <span style="color: purple;">the here() function of the here package</span> </span> <span style="color: grey;">: the different arguments = parameters of the function are the folders of the path leading to the file and the name of the file to open as follows: </span> 
+*In our example*, we will load the *Pokemon* dataset, which is in the `data folder` on the project root.  
+We use </span><span style="color: purple;">the here() function of the here package</span> the different arguments = parameters of the function are the folders of the path leading to the file and the name of the file to open as follows: 
 
 
 ```{r, eval = FALSE}
- # give the relative path to the data and read the data:
+ # 1st line of the make.R: give the relative path to the data and read the data:
   data_poke <- readr::read_csv(here::here("data", "pokemon.csv"))
 ```
  
@@ -86,4 +85,34 @@ usethis::use_package("name_of_the_package")
 ```
 
 
+To install the dependencies your project is relying on, use </span> <span style="color: purple;">the install_deps() function of the devtools package</span> as follow:
+
+
+```{r, eval = FALSE}
+ # 2nd line of the make.R: install dependencies
+devtools::install_deps()
+```
+
+The first two lines of the `make.R` file are coded!
+
+
+![Artwork from Amino App](index_files/images/happy_first_step.jpg){width=200px}
+
+<span style="color: aquamarine;">A - 2 - Source your R functions </span> 
+
+
+If you have defined and coded specific R functions collected in the `R folder` on the project root, you have to source them. It allows the use of these functions in the R scripts for the analysis. To do so, you use </span> <span style="color: purple;">the source function</span> and
+we **never forget to use relative paths using </span> <span style="color: purple;">the here package</span>**:
+
+
+```{r, eval = FALSE}
+ # 3rd line of the make.R: load defined functions of the R folder
+source(here::here("R", "data_wildfinder.R"))
+```
+
+
+<span style="color: aquamarine;">A - 3 - Source your R scripts for analysis </span> 
+
+
+## B - Using <span style="color: purple;">the targets package</span> 
 
