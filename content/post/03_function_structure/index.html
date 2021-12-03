@@ -1,7 +1,7 @@
 ---
-title: "Creat function and adapt structure"
+title: "Create function and adapt structure"
 author: "Erwan"
-date: 2021-12-01T21:13:14-05:00
+date: 2021-11-30
 categories: ["R"]
 tags: ["tmtcbythecc"]
 ---
@@ -9,11 +9,27 @@ tags: ["tmtcbythecc"]
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
+<p>How to code ?
+package::function
+When you use a package you have to add is to the DESCRIPTION FILE
+usethis:unsepackage(package3) pour rajouter package3 au fichier DESCRIPTION</p>
 <p>Now you are suppose to have a beautiful project structure link to gitHub. Now that we finished to create the basis of the project we will start it ! We will beging by creat a new function.</p>
 <p>To do so we will create a new script. As we said we will use the R file to put inside R scripts that construct functions. The name of the script is really important, we will call it 01_clean_data_function.R. Each script that create function will finish by “function”. We will create a function to clean the dataset.</p>
 <p>We open 01_clean_data_function.R and we write :</p>
 <pre class="r"><code>pokeclean &lt;- function(poke){
-  poke2 &lt;- poke[-rowSums(is.na(poke[,])) == 0, ]
-  poke3 &lt;- poke2[,-c()]
+  poke2 &lt;- poke[-poke$generation %in% c(&quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;), ]
+  poke3 &lt;- poke2[,-which(names(poke2) %in% c(&quot;japanese_name&quot;,&quot;classfication&quot;))]
   return(poke3)
 }</code></pre>
+<p>voila voila</p>
+<p>When you create a function you also have to create a header Roxygene. Permet notamment d’aller chercher les aides des fonctions avec ?nom_fonction.</p>
+<p>-on creer une function dans le dossier R “01_clean_data_function”
+-dans analysis on creer “01_clean_data.R”.</p>
+<p>-on creer une function dans le dossier R “02_??<em>function.R”
+-dans analysis on creer “02</em>???.R”</p>
+<p>-dans analysis on creer “03_which_type.R”
+-dans ouputs on creer “03_which_type_barplot.png”<br />
+-dans ouputs on creer “03_which_type_camemmbert.png”</p>
+<p>-dans analysis on creer “04_regression_weight_attack.R”
+-dans ouputs on creer “04_regression_weight_attack.png”
+-dans ouputs on creer “04_regression_weight_attack.RDATA”</p>
