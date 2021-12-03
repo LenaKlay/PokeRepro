@@ -1,7 +1,7 @@
 baseurl: /
 languageCode: en-us
 title: Ocean
-theme: hugo-lithium
+theme: "hugo-theme-minos"
 googleAnalytics: ''
 disqusShortname: ''
 ignoreFiles:
