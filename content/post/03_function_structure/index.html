@@ -1,0 +1,19 @@
+---
+title: "Creat function and adapt structure"
+author: "Erwan"
+date: 2021-12-01T21:13:14-05:00
+categories: ["R"]
+tags: ["tmtcbythecc"]
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Now you are suppose to have a beautiful project structure link to gitHub. Now that we finished to create the basis of the project we will start it ! We will beging by creat a new function.</p>
+<p>To do so we will create a new script. As we said we will use the R file to put inside R scripts that construct functions. The name of the script is really important, we will call it 01_clean_data_function.R. Each script that create function will finish by “function”. We will create a function to clean the dataset.</p>
+<p>We open 01_clean_data_function.R and we write :</p>
+<pre class="r"><code>pokeclean &lt;- function(poke){
+  poke2 &lt;- poke[-rowSums(is.na(poke[,])) == 0, ]
+  poke3 &lt;- poke2[,-c()]
+  return(poke3)
+}</code></pre>
