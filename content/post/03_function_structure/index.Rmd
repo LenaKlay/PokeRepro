@@ -32,7 +32,7 @@ poke <- read.csv("~/Desktop/PHD1/Formation/Reproductibility/PokeRepro/data/pokem
 
 voila  voila 
 
-When you create a function you also have to 
+When you create a function you also have to create a header Roxygene
 
 -on creer une function dans le dossier R “01_clean_data_function”
 -dans analysis on creer “01_clean_data.R”
