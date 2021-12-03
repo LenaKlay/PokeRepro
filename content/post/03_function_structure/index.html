@@ -9,11 +9,11 @@ tags: ["tmtcbythecc"]
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
-<p>How to code ?
-package::function
-When you use a package you have to add is to the DESCRIPTION FILE
-usethis:unsepackage(package3) pour rajouter package3 au fichier DESCRIPTION</p>
-<p>Now you are suppose to have a beautiful project structure link to gitHub. Now that we finished to create the basis of the project we will start it ! We will beging by creat a new function.</p>
+<p>Good practise coding:</p>
+<p>When you code do package::function when you call a function.
+When you use a package you have to add it to the DESCRIPTION FILE. Do do so you can right in the consol <code>usethis:use_package(random_name_of_package)</code>.
+Also, for each script do not forget to add a header (see example)</p>
+<p>Now you are suppose to have a beautiful project structure link to gitHub. Now that we finished to create the basis of the project we will start it ! We will begin by create a new function.</p>
 <p>To do so we will create a new script. As we said we will use the R file to put inside R scripts that construct functions. The name of the script is really important, we will call it 01_clean_data_function.R. Each script that create function will finish by “function”. We will create a function to clean the dataset.</p>
 <p>We open 01_clean_data_function.R and we write :</p>
 <pre class="r"><code>pokeclean &lt;- function(poke){
@@ -21,12 +21,38 @@ usethis:unsepackage(package3) pour rajouter package3 au fichier DESCRIPTION</p>
   poke3 &lt;- poke2[,-which(names(poke2) %in% c(&quot;japanese_name&quot;,&quot;classfication&quot;))]
   return(poke3)
 }</code></pre>
-<p>voila voila</p>
-<p>When you create a function you also have to create a header Roxygene. Permet notamment d’aller chercher les aides des fonctions avec ?nom_fonction.</p>
-<p>-on creer une function dans le dossier R “01_clean_data_function”
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<img src="taupiqueur_meme_football.jpg" alt="Taupiqueur attack - Coualbox" width="40%" />
+<p class="caption">
+Figure 1: Taupiqueur attack - Coualbox
+</p>
+</div>
+<p>When you create a function you also have to create a header Roxygene. Its will allow you to have an acces to the help menu doing ?myfunction. This will be useful for you if you have many functions or for anyone that may use your function.</p>
+<p>To do so you put your mouse cursor at the begegning of the function you just created. Then you go on <em>code</em>&gt;<em>Insert Roxygene Squeleton</em></p>
+<p>#’ Title<br />
+#’<br />
+#’ <span class="citation">@param</span> poke<br />
+#’<br />
+#’ <span class="citation">@return</span><br />
+#’ <span class="citation">@export</span><br />
+#’<br />
+#’ <span class="citation">@examples</span><br />
+pokeclean &lt;- function(poke){</p>
+<p>Now you will modify it, we can do something like this:</p>
+<p>#’ pokeclean is a function that take in input a dataframe and select only the 3 first generations of pokemons and remouve the japanese_name and classfication.<br />
+#’<br />
+#’ <span class="citation">@param</span> poke<br />
+#’<br />
+#’ <span class="citation">@return</span> a dataframe<br />
+#’ <span class="citation">@export</span><br />
+#’<br />
+#’ <span class="citation">@examples</span> there is no examples</p>
+<p>Now let’s say that you have to create a function to plot something. Because this function isn’t link with data manipulation we will create a new script R. We will call it <strong>02_plot_function.R</strong></p>
+<p>We will create another function but this time it will concern.
+-on creer une function dans le dossier R “01_clean_data_function”
 -dans analysis on creer “01_clean_data.R”.</p>
-<p>-on creer une function dans le dossier R “02_??<em>function.R”
--dans analysis on creer “02</em>???.R”</p>
+<p>-on creer une function dans le dossier R “02_plot_function.R”
+-dans analysis on creer “02_plot.R”</p>
 <p>-dans analysis on creer “03_which_type.R”
 -dans ouputs on creer “03_which_type_barplot.png”<br />
 -dans ouputs on creer “03_which_type_camemmbert.png”</p>

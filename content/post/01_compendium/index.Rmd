@@ -30,6 +30,10 @@ Now go in the R console and do:
 `rrtools::use_compendium("../Pickachu/", open = FALSE)`.  
 This function will create a compendium inside your project. By doing so you will create 4 new documents: 2 visible: DESCRIPTION and NAMESPACE and 2 invisible: .Rhistory, .Rbuildignore. DESCRIPTION is an important file because it will save all the packages version you will use during your study in order that other will reproduce your work easily. 
 
+```{r, echo=FALSE, fig.cap="Your are doing a great job - Pokepedia", out.width = '50%'}
+knitr::include_graphics("Aligatueur.png")
+```
+
 ### 4) Construct your project architecture  
 
 Now you can complete your folder architecture of your project. Because you may work in science, I suggest you to do something like that: 
