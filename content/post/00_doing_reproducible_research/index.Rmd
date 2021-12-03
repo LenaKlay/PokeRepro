@@ -75,7 +75,7 @@ If you are new to the subject, you can follow the tutorials in this order:
 
 * 2 - Use Git and Github 
 
-* 3 - Create and define your first R function 
+* 3 - Create and define your first R function and analysis script
 
 * 4 - Create an automatised workflow: using make.R or the targets package
 

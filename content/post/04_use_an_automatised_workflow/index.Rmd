@@ -6,26 +6,31 @@ categories: ["R"]
 tags: ["Reproducible_Research"]
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-## R Markdown
+## Why using an automatised workflow? 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+When you are coding, your life is a succession of: launching your code, 
+waiting while it runs, discovering an issue and ... restarting from scratch: 
 
-```{r cars}
-summary(cars)
-```
+![](index_files/images/poke_crying.jpg){width=200px}
 
-## Including Plots
 
-You can also embed plots, for example:
+So, to make your code life easier you can **automatised your worklow so that 
+re-running all your analysis only consist in running one file**!
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Dependencies between the different steps of your analysis workflow have to be 
+stated by using a `make.R` file <span style="color: grey;">(easy if your 
+worklow is linear that is to say if one step leads to another unique one)</span> or <span style="color: purple;">the targets package</span> <span style="color: grey;">(easier to use than the `make.R` file if your worklow is not linear)</span>
+
+
+In this tutorial, we will see the two methods starting with the `make.R` file. 
+**We assumed that you have already done the** *03 - Create and define your first R function and analysis script* 
+
+
+
+## Using the `make.R` file
+
+
+
