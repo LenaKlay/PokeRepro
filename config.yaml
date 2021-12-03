@@ -16,10 +16,10 @@ menu:
   main:
     - name: About
       url: /about/
-    - name: GitHub
-      url: https://github.com/rstudio/blogdown
-    - name: Twitter
-      url: https://twitter.com/rstudio
+    - name: Révolte indienne
+      url: https://lareleveetlapeste.fr/apres-un-an-de-revolte-les-paysans-indiens-obtiennent-le-retrait-de-la-reforme-polemique/
+    - name: Day to night photography
+      url: https://waitbutwhy.com/2016/06/incredible-day-to-night-photography.html
 params:
   MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
   MathJaxVersion: 2.7.5
