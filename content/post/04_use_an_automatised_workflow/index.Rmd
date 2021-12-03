@@ -49,7 +49,7 @@ loading the dependencies your project relies on, functions you have coded,
 sourcing scripts containing code for your analysis *etc.*
 
 
-<span style="color: aquamarine;">##### 1 - Load the data and depencies </span> 
+<span style="color: aquamarine;">1 - Load the data and depencies </span> 
 
 
 * The first thing to code in the `make.R` file is to **automatise the data loading**.  
@@ -84,3 +84,6 @@ using the following command:
 # command to add dependencies to the DESCRIPTION file:
 usethis::use_package("name_of_the_package")
 ```
+
+
+
