@@ -32,25 +32,26 @@ file.create(&quot;make.R&quot;)</code></pre>
 loading the dependencies your project relies on, functions you have coded,
 sourcing scripts containing code for your analysis <em>etc.</em></p>
 <p><span style="color: aquamarine;">##### 1 - Load the data and depencies </span></p>
-<p>The first thing to code in the <code>make.R</code> file is to <strong>automatise the data loading</strong>.<br />
+<ul>
+<li>The first thing to code in the <code>make.R</code> file is to <strong>automatise the data loading</strong>.<br />
 To do so you must use <span style="color: purple;">the here package</span>
 (<a href="https://here.r-lib.org/">link to the here website</a>): it helps to use <strong>relative paths</strong>
 (defined on the project root) instead of absolute ones as everyone as a different
-absolute path.</p>
+absolute path.</li>
+</ul>
 <p><span style="color: grey;"><em>In our example</em>, we will load the <em>Pokemon</em> dataset, which is in the <code>data folder</code> on the project root.<br />
 We use </span> <span style="color: purple;">the here() function of the here package</span> </span> <span style="color: grey;">: the different arguments = parameters of the function are the folders of the path leading to the file and the name of the file to open as follows: </span></p>
 <pre class="r"><code> # give the relative path to the data and read the data:
   data_poke &lt;- readr::read_csv(here::here(&quot;data&quot;, &quot;pokemon.csv&quot;))</code></pre>
-<pre><code>## Rows: 801 Columns: 41</code></pre>
-<pre><code>## -- Column specification --------------------------------------------------------
-## Delimiter: &quot;,&quot;
-## chr  (7): abilities, capture_rate, classfication, japanese_name, name, type1...
-## dbl (34): against_bug, against_dark, against_dragon, against_electric, again...</code></pre>
-<pre><code>## 
-## i Use `spec()` to retrieve the full column specification for this data.
-## i Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <p><strong>NOTE:</strong> Using package_name::function_name and not <code>library(package_name)</code> because
 different functions belonging to different packages can have the same name, thus
 using this coding style helps the code readability and prevent conflicts.</p>
-<p>Then, we must</p>
+<ul>
+<li>Then, we must <strong>automatise dependencies loading</strong> that is to say the name of the
+packages used in the functions we have created and defined.</li>
+</ul>
+<p><em>Reminder:</em> In the tutorial <em>03 - Create and define your first R function and analysis script</em>, these dependencies have been added to the <code>Import</code> part of the <code>DESCRIPTION file</code> by
+using the following command:</p>
+<pre class="r"><code># command to add dependencies to the DESCRIPTION file:
+usethis::use_package(&quot;name_of_the_package&quot;)</code></pre>
 </div>
