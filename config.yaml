@@ -1,6 +1,6 @@
 baseurl: /
 languageCode: en-us
-title: Ocean
+title: PokeReproducibility
 theme: "hugo-theme-minos"
 googleAnalytics: ''
 disqusShortname: ''
@@ -16,14 +16,17 @@ menu:
   main:
     - name: About
       url: /about/
-    - name: Révolte indienne
-      url: https://lareleveetlapeste.fr/apres-un-an-de-revolte-les-paysans-indiens-obtiennent-le-retrait-de-la-reforme-polemique/
-    - name: Day to night photography
-      url: https://waitbutwhy.com/2016/06/incredible-day-to-night-photography.html
+      weight: 1
+    - name: Github
+      url: https://github.com/LenaKlay/PokeRepro
+      weight: 3
+    - name: Tutorials
+      url: /post/
+      weight: 2
 params:
   MathJaxCDN: //cdnjs.cloudflare.com/ajax/libs
   MathJaxVersion: 2.7.5
-  description: A website about something not defined yet.
+  description: A Website to Learn Code Reproductibility with R and Pokemons
   favicon: "logo.png"
   highlightjsCDN: //cdnjs.cloudflare.com/ajax/libs
   highlightjsLang:
