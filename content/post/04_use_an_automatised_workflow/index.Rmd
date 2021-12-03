@@ -33,8 +33,10 @@ In this tutorial, we will see the two methods starting with the `make.R` file.
 ## A - Using the `make.R` file
 
 
-In the tutorial *01 Let's Create a Research Compendium!*, you have already 
-created a `make.R` file on the project root.  If not, you can create it by using:
+You have to create a `make.R` file on the project root, for instance by using 
+<span style="color: purple;">the file.create() function</span> or by using 
+*File > New File > Rscript* if using RStudio and then saving the file on the 
+project root:
 
 
 ```{r, eval = FALSE}
@@ -45,7 +47,8 @@ file.create("make.R")
 
 This file will contains everything needed to run your project: for instance
 loading the dependencies your project relies on, functions you have coded, 
-sourcing scripts containing code for your analysis *etc.*
+sourcing scripts containing code for your analysis *etc.*. In this method,
+running this folder will run the whole workflow!
 
 
 <span style="color: aquamarine;">A - 1 - Load the data and depencies </span> 
@@ -119,7 +122,7 @@ Now our functions are sourced!
 <span style="color: aquamarine;">A - 3 - Source your R scripts for analysis </span> 
 
 
-
+Then, the last step is to run the R script 
 
 
 ## B - Using <span style="color: purple;">the targets package</span> 
