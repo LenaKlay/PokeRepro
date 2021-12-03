@@ -106,13 +106,20 @@ we **never forget to use relative paths using </span> <span style="color: purple
 
 
 ```{r, eval = FALSE}
- # 3rd line of the make.R: load defined functions of the R folder
-source(here::here("R", "data_wildfinder.R"))
+ # 3rd and 4rth lines of the make.R: load defined functions of the R folder
+source(here::here("R", "01_clean_data_function.R"))
+source(here::here("R", "02_plot_function.R"))
 ```
+ 
+Now our functions are sourced! 
 
+![Artwork from ClipArtMax](index_files/images/pokeball.jpg){width=200px}
 
 
 <span style="color: aquamarine;">A - 3 - Source your R scripts for analysis </span> 
+
+
+
 
 
 ## B - Using <span style="color: purple;">the targets package</span> 
