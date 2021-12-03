@@ -82,4 +82,9 @@ If you are new to the subject, you can follow the tutorials in this order:
 * 5 - Create and isolated and portable environment using renv
 
 
+Now let's do reproducible research!
+
+
+![Pikachu Artwork from Pokepedia](index_files/images/Pikachu_Pokepedia.png){width=200px}
+
 
