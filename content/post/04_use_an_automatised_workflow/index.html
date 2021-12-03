@@ -13,7 +13,10 @@ tags: ["Reproducible_Research"]
 <h2>Why using an automatised workflow?</h2>
 <p>When you are coding, your life is a succession of: launching your code,
 waiting while it runs, discovering an issue and … restarting from scratch:</p>
-<p><img src="{{< blogdown/postref >}}index_files/images/poke_crying.jpg" width="200" /></p>
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/images/poke_crying.jpg" width="200" alt="" />
+<p class="caption">Artwork from Pokemon USA</p>
+</div>
 <p>So, to make your code life easier you can <strong>automatised your worklow so that
 re-running all your analysis only consist in running one file</strong>!</p>
 <p>Dependencies between the different steps of your analysis workflow have to be
@@ -22,16 +25,19 @@ worklow is linear that is to say if one step leads to another unique one)</span>
 <p>In this tutorial, we will see the two methods starting with the <code>make.R</code> file.
 <strong>We assumed that you have already done the</strong> <em>03 - Create and define your first R function and analysis script</em></p>
 </div>
-<div id="using-the-make.r-file" class="section level2">
-<h2>Using the <code>make.R</code> file</h2>
-<p>In the tutorial <em>01 Let’s Create a Research Compendium!</em>, you have already
-created a <code>make.R</code> file on the project root. If not, you can create it by using:</p>
+<div id="a---using-the-make.r-file" class="section level2">
+<h2>A - Using the <code>make.R</code> file</h2>
+<p>You have to create a <code>make.R</code> file on the project root, for instance by using
+<span style="color: purple;">the file.create() function</span> or by using
+<em>File &gt; New File &gt; Rscript</em> if using RStudio and then saving the file on the
+project root:</p>
 <pre class="r"><code># Command to create a make.R file on the project root if not done before:
 file.create(&quot;make.R&quot;)</code></pre>
 <p>This file will contains everything needed to run your project: for instance
 loading the dependencies your project relies on, functions you have coded,
-sourcing scripts containing code for your analysis <em>etc.</em></p>
-<p><span style="color: aquamarine;">1 - Load the data and depencies </span></p>
+sourcing scripts containing code for your analysis <em>etc.</em>. In this method,
+running this folder will run the whole workflow!</p>
+<p><span style="color: aquamarine;">A - 1 - Load the data and depencies </span></p>
 <ul>
 <li>The first thing to code in the <code>make.R</code> file is to <strong>automatise the data loading</strong>.<br />
 To do so you must use <span style="color: purple;">the here package</span>
@@ -39,9 +45,9 @@ To do so you must use <span style="color: purple;">the here package</span>
 (defined on the project root) instead of absolute ones as everyone as a different
 absolute path.</li>
 </ul>
-<p><span style="color: grey;"><em>In our example</em>, we will load the <em>Pokemon</em> dataset, which is in the <code>data folder</code> on the project root.<br />
-We use </span> <span style="color: purple;">the here() function of the here package</span> </span> <span style="color: grey;">: the different arguments = parameters of the function are the folders of the path leading to the file and the name of the file to open as follows: </span></p>
-<pre class="r"><code> # give the relative path to the data and read the data:
+<p><em>In our example</em>, we will load the <em>Pokemon</em> dataset, which is in the <code>data folder</code> on the project root.<br />
+We use </span><span style="color: purple;">the here() function of the here package</span> the different arguments = parameters of the function are the folders of the path leading to the file and the name of the file to open as follows:</p>
+<pre class="r"><code> # 1st line of the make.R: give the relative path to the data and read the data:
   data_poke &lt;- readr::read_csv(here::here(&quot;data&quot;, &quot;pokemon.csv&quot;))</code></pre>
 <p><strong>NOTE:</strong> Using package_name::function_name and not <code>library(package_name)</code> because
 different functions belonging to different packages can have the same name, thus
@@ -54,4 +60,28 @@ packages used in the functions we have created and defined.</li>
 using the following command:</p>
 <pre class="r"><code># command to add dependencies to the DESCRIPTION file:
 usethis::use_package(&quot;name_of_the_package&quot;)</code></pre>
+<p>To install the dependencies your project is relying on, use </span> <span style="color: purple;">the install_deps() function of the devtools package</span> as follow:</p>
+<pre class="r"><code> # 2nd line of the make.R: install dependencies
+devtools::install_deps()</code></pre>
+<p>The first two lines of the <code>make.R</code> file are coded!</p>
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/images/happy_first_step.jpg" width="200" alt="" />
+<p class="caption">Artwork from Amino App</p>
+</div>
+<p><span style="color: aquamarine;">A - 2 - Source your R functions </span></p>
+<p>If you have defined and coded specific R functions collected in the <code>R folder</code> on the project root, you have to source them. It allows the use of these functions in the R scripts for the analysis. To do so, you use </span> <span style="color: purple;">the source function</span> and
+we <strong>never forget to use relative paths using </span> <span style="color: purple;">the here package</span></strong>:</p>
+<pre class="r"><code> # 3rd and 4rth lines of the make.R: load defined functions of the R folder
+source(here::here(&quot;R&quot;, &quot;01_clean_data_function.R&quot;))
+source(here::here(&quot;R&quot;, &quot;02_plot_function.R&quot;))</code></pre>
+<p>Now our functions are sourced!</p>
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/images/pokeball.jpg" width="200" alt="" />
+<p class="caption">Artwork from ClipArtMax</p>
+</div>
+<p><span style="color: aquamarine;">A - 3 - Source your R scripts for analysis </span></p>
+<p>Then, the last step is to run the R script</p>
+</div>
+<div id="b---using-the-targets-package" class="section level2">
+<h2>B - Using <span style="color: purple;">the targets package</span></h2>
 </div>

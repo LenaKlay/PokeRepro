@@ -1,6 +1,6 @@
 ---
 title: "Let's create a research compendium"
-author: "Erwan"
+author: "Erwan et Léna"
 date: "2021-12-02"
 categories: ["R"]
 tags: ["voila"]
@@ -9,38 +9,53 @@ bibliography: "biblio/biblio.bib"
 
 <style> body {text-align: justify} </style>
 
-### 1) Creat a new repository on GitHub  
 
-Connect to your GitHub account. Go on **Repositories** tab and click to **New**. For the following exemple I suggest you to name your new GitHub repository **Pickachu** and add a README file, a licence (GNU Affero General Public License v3.0) and a .gitignore (R). By doing that you will create a new repository on GitHub containing 3 files : a .gitignore, a LICENSE and a. README.md visible on github. Then go on **code** tab and copy the SSH link.  
+## Create a research compendium
 
-### 2) Install the GitHub repository on your computer 
+A research compendium is a folder providing data, code, and documentation, i.e. all you need to get a reproducing a scientific workflow ! To create this amazing tool, open RStudio and create a new R-Project : *File > New Project...*
 
-Now open Rstudio and go here *file* > *new project* > *version control* > *git* past the SSH link and choose the location of the file **Pickachu** that will contain your future project. 
-Now if you open your **Pickachu** file on you local computer you will see 3 files: a .Rproj, the LICENSE and the README.md. However 3 others invisible files are in your **Pickachu** file: a .gitignore, a .git and a .Rproj.user. They don’t appear because they are hidden. However you can see them on R studio, GitHub and if you reveal hidden files. 
+![](screen_shots/1_a.png){width=200px}
 
-### 3) Create a research compendium
+Choose *New Directory* and then *New Project*.
 
-A research compendium it’s just a folder providing data, code, and documentation for reproducing a scientific workflow. To create it, open again your R Studio window and be sure to be inside your project that appear at the right top corner of your Rstudio, here : 
+![](screen_shots/1_b.png){width=200px}
+A new R-Project is create, it looks like this : 
 
-```{r, echo=FALSE, fig.cap="Check that you are inside your project !", out.width = '50%'}
-knitr::include_graphics("image0.png")
+![](screen_shots/1_c.png){width=400px}
+
+Now the project is created, we are going to organize it as a compendium. To do so, write the following command in the R console :  
+
+```{r}
+rrtools::use_compendium("../Pickachu/", open = FALSE)
 ```
+  
+![](screen_shots/1_d.png){width=200px}
 
-Now go in the R console and do:  
-`rrtools::use_compendium("../Pickachu/", open = FALSE)`.  
-This function will create a compendium inside your project. By doing so you will create 4 new documents: 2 visible: DESCRIPTION and NAMESPACE and 2 invisible: .Rhistory, .Rbuildignore. DESCRIPTION is an important file because it will save all the packages version you will use during your study in order that other will reproduce your work easily. 
+![](screen_shots/1_e.png){width=200px}
+  
+This function will create 4 new documents : 2 visible (DESCRIPTION and NAMESPACE) and 2 invisible (.Rhistory, .Rbuildignore.). DESCRIPTION is an important file : it will be used to store the packages versions of the project, for good reproducible work ! 
 
+<<<<<<< HEAD
 ```{r, echo=FALSE, fig.cap="Your are doing a great job - Pokepedia", out.width = '50%'}
 knitr::include_graphics("Aligatueur.png")
 ```
 
 ### 4) Construct your project architecture  
+=======
+![](screen_shots/1_f.png){width=200px}
+>>>>>>> d0d0331c63c6eb3404ef40523f89d98036d50f84
 
-Now you can complete your folder architecture of your project. Because you may work in science, I suggest you to do something like that: 
 
-```{r, echo=FALSE, fig.cap="This is a cool architecture", out.width = '65%'}
-knitr::include_graphics("image1.png")
-```
+# Complete your project architecture  
+
+Now you can complete your folder architecture with more personal folders. Because you may work with datas, I suggest you to do something like that: 
+
+![](screen_shots/2_a.png){width=100px}
+
+The following folders are created in your R-Project.
+
+![](screen_shots/2_b.png){width=200px}
+
 
 Bellow see some general advises:  
 
