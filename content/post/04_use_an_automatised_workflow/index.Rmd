@@ -104,7 +104,7 @@ The first two lines of the `make.R` file are coded!
 <span style="color: aquamarine;">A - 2 - Source your R functions </span> 
 
 
-If you have defined and coded specific R functions collected in the `R folder` on the project root, you have to source them. It allows the use of these functions in the R scripts for the analysis. To do so, you use </span> <span style="color: purple;">the source function</span> and
+If you have defined and coded specific R functions collected in the `R folder` on the project root, you have to source the file(s) that contain(s) them. It allows the use of these functions in the R scripts for the analysis. To do so, you use </span> <span style="color: purple;">the source function</span> and
 we **never forget to use relative paths using </span> <span style="color: purple;">the here package</span>**:
 
 
@@ -122,7 +122,7 @@ Now our functions are sourced!
 <span style="color: aquamarine;">A - 3 - Source your R scripts for analysis </span> 
 
 
-Then, the last step is to run the R script 
+Then, the last step is to run the R script(s) containing code for analysis. They are usually contained in an `analysis folder`
 
 
 ## B - Using <span style="color: purple;">the targets package</span> 

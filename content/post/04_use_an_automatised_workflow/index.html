@@ -69,7 +69,7 @@ devtools::install_deps()</code></pre>
 <p class="caption">Artwork from Amino App</p>
 </div>
 <p><span style="color: aquamarine;">A - 2 - Source your R functions </span></p>
-<p>If you have defined and coded specific R functions collected in the <code>R folder</code> on the project root, you have to source them. It allows the use of these functions in the R scripts for the analysis. To do so, you use </span> <span style="color: purple;">the source function</span> and
+<p>If you have defined and coded specific R functions collected in the <code>R folder</code> on the project root, you have to source the file(s) that contain(s) them. It allows the use of these functions in the R scripts for the analysis. To do so, you use </span> <span style="color: purple;">the source function</span> and
 we <strong>never forget to use relative paths using </span> <span style="color: purple;">the here package</span></strong>:</p>
 <pre class="r"><code> # 3rd and 4rth lines of the make.R: load defined functions of the R folder
 source(here::here(&quot;R&quot;, &quot;01_clean_data_function.R&quot;))
@@ -80,7 +80,7 @@ source(here::here(&quot;R&quot;, &quot;02_plot_function.R&quot;))</code></pre>
 <p class="caption">Artwork from ClipArtMax</p>
 </div>
 <p><span style="color: aquamarine;">A - 3 - Source your R scripts for analysis </span></p>
-<p>Then, the last step is to run the R script</p>
+<p>Then, the last step is to run the R script(s) containing code for analysis. They are usually contained in an <code>analysis folder</code></p>
 </div>
 <div id="b---using-the-targets-package" class="section level2">
 <h2>B - Using <span style="color: purple;">the targets package</span></h2>
