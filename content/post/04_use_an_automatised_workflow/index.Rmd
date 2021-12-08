@@ -122,8 +122,31 @@ Now our functions are sourced!
 <span style="color: aquamarine;">A - 3 - Source your R scripts for analysis </span> 
 
 
-Then, the last step is to run the R script(s) containing code for analysis. They are usually contained in an `analysis folder`
+Then, the last step is to run the R script(s) containing code for analysis. They are usually contained in an `analysis folder` and some of them (or all of them) can call functions you have coded (and which are in the `R folder`).   
 
+You have already coded some R scripts for the analysis in the *03 - Create and define your first R function and analysis script* tutorial. Thus we are sourcing these files using the following command:
+
+
+```{r, eval = FALSE}
+# 5th and 6th lines of the make.R: run analyses scripts
+source(here::here("analysis", "01_clean_data.R"))
+source(here::here("analysis", "02_plot.R"))
+```
+
+
+Now our scripts for analyses are sourced, we are ready to compute the whole project!
+
+
+![Artwork from Dexerto](index_files/images/evoli_ready.png){width=200px}
+
+
+<span style="color: aquamarine;">A - 4 - Have a look to your finished `make.R` file </span> 
+
+
+The `make.R` file is now finished for our Pikachu Project! If you want to re-run all your project, you just have to run this file and in only one step, everything is computed, how nice!
+
+
+![So far, that's what your make.R file looks like!](index_files/images/make_R_capture.PNG){width=400px}
 
 ## B - Using <span style="color: purple;">the targets package</span> 
 

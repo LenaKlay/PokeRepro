@@ -20,6 +20,10 @@ devtools::install_deps()
 
 
 #  Load defined functions of the R folder
-# source(here::here("R", "01_clean_data_function.R"))
-# source(here::here("R", "02_plot_function.R"))
+source(here::here("R", "01_clean_data_function.R"))
+source(here::here("R", "02_plot_function.R"))
+
+# Run analyses scripts
+source(here::here("analysis", "01_clean_data.R"))
+source(here::here("analysis", "02_plot.R"))
 

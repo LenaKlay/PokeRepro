@@ -80,7 +80,22 @@ source(here::here(&quot;R&quot;, &quot;02_plot_function.R&quot;))</code></pre>
 <p class="caption">Artwork from ClipArtMax</p>
 </div>
 <p><span style="color: aquamarine;">A - 3 - Source your R scripts for analysis </span></p>
-<p>Then, the last step is to run the R script(s) containing code for analysis. They are usually contained in an <code>analysis folder</code></p>
+<p>Then, the last step is to run the R script(s) containing code for analysis. They are usually contained in an <code>analysis folder</code> and some of them (or all of them) can call functions you have coded (and which are in the <code>R folder</code>).</p>
+<p>You have already coded some R scripts for the analysis in the <em>03 - Create and define your first R function and analysis script</em> tutorial. Thus we are sourcing these files using the following command:</p>
+<pre class="r"><code># 5th and 6th lines of the make.R: run analyses scripts
+source(here::here(&quot;analysis&quot;, &quot;01_clean_data.R&quot;))
+source(here::here(&quot;analysis&quot;, &quot;02_plot.R&quot;))</code></pre>
+<p>Now our scripts for analyses are sourced, we are ready to compute the whole project!</p>
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/images/evoli_ready.png" width="200" alt="" />
+<p class="caption">Artwork from Dexerto</p>
+</div>
+<p><span style="color: aquamarine;">A - 4 - Have a look to your finished <code>make.R</code> file </span></p>
+<p>The <code>make.R</code> file is now finished for our Pikachu Project! If you want to re-run all your project, you just have to run this file and in only one step, everything is computed, how nice!</p>
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/images/make_R_capture.PNG" width="400" alt="" />
+<p class="caption">So far, that’s what your make.R file looks like!</p>
+</div>
 </div>
 <div id="b---using-the-targets-package" class="section level2">
 <h2>B - Using <span style="color: purple;">the targets package</span></h2>
