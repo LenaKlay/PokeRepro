@@ -61,7 +61,10 @@ If raw data you used is download, it is better if you automate their obtention <
 
 
 In this website, we propose a set of tutorials to learn how to do reproducible research!  
-Each tutorial contains R chunks so you can run the analysis using a **Pokemon dataset** from the Kaggle website ([link](https://www.kaggle.com/rounakbanik/pokemon)) which gathers informations like Basic Statistics, Type, Height, Weight *etc* for 802 Pokemons.
+Each tutorial contains R chunks so you can run the analysis using a **Pokemon dataset** from the Kaggle website ([link](https://www.kaggle.com/rounakbanik/pokemon)) which gathers informations like Basic Statistics, Type, Height, Weight *etc* for 802 Pokemons. We will create a reproducible project to answer two questions: 
+
+* How does the attack ability evolve with height and weight?
+* Which pokemon type has the highest proportion of legendary pokemons?
 
 
 
