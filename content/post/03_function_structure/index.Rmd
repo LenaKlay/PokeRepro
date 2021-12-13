@@ -9,7 +9,7 @@ tags: ["tmtcbythecc"]
 Good practise coding: 
 
 When you code do package::function when you call a function.
-When you use a package you have to add it to the DESCRIPTION FILE. Do do so you can right in the consol `usethis:use_package(random_name_of_package)`.
+When you use a package you have to add it to the DESCRIPTION FILE. Do do so you can right in the consol `usethis:use_package(random_name_of_package)` instead of `install.package()`
 Also, for each script do not forget to add a header (see example)
 
 Now you are suppose to have a beautiful project structure link to gitHub. Now that we finished to create the basis of the project we will start it ! We will begin by create a new function. 
@@ -66,6 +66,7 @@ Now let's say that you have to create a function to plot something. Because this
 ```{r, eval=FALSE}
 
 ```
+
 
 
 We will create another function but this time it will concern. 
