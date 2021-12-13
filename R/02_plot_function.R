@@ -1,4 +1,9 @@
-
+#formation du data frame pour qu'il puisse donner les plots grace a la fonction que j'utilise
+#je ne sais pas ou le mettre ca. Dans la function carrement ? D'un autre cote le script s'apelle
+#02_plot et pas x_data_manipulation. Mais si je le met dans un autre script data_manipulation ca veut dire
+#que je dois run data_manipulation qui va creer 2 objets et ensuite je vais pouvoir utiliser la function..
+#Bref je suis paume encore, cette facon de diviser le travail ne m'est pas dutout familiere
+#poke <- read.csv(le data frame)
 pokebytype <- as.data.frame(table(poke$type1))
 colnames(pokebytype)[colnames(pokebytype)=="Var1"] <- "type"
 poke$generation <- as.factor(poke$generation)
