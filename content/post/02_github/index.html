@@ -11,11 +11,11 @@ tags: ["voilou"]
 
 <div id="why-git" class="section level2">
 <h2>Why Git ?</h2>
-<p>You now have your new brand research compendium built on your laptop. That’s great ! The idea now is to track changes in a project efficiently. To do so, we use git, a control version application. Instead of saving only the latest version, git allows us to take snapshots of the project regularly so that we save a timeline. This is very interesting, especially to :</p>
+<p>You now have a brand new research compendium built on your laptop. That’s great ! The next step is to track changes efficiently in the project . To do so we use git which is a control version application : instead of saving only the latest version, git allows us to take snapshots of the project regularly so that we save the full timeline. This is very interesting, especially to :</p>
 <ul>
 <li>Track all the modifications made by you or your collaborators in the past and enhance reproducibility.</li>
-<li>Restore any old version of the project at anytime.</li>
-<li>Work together efficiently by managing all the contributions and the version conflicts.</li>
+<li>Restore any old version of the project at any time.</li>
+<li>Work together efficiently by managing contributions and solve possible version conflicts.</li>
 </ul>
 <div class="figure">
 <img src="{{< blogdown/postref >}}index_files/images/git8.png" width="200" alt="" />
@@ -28,15 +28,15 @@ tags: ["voilou"]
 <pre class="r"><code>usethis::use_git()</code></pre>
 <p><img src="{{< blogdown/postref >}}index_files/screen_shots/3_a.png" width="500" />
 <img src="{{< blogdown/postref >}}index_files/screen_shots/3_b.png" width="500" /></p>
-<p>RStudio will ask you to restart, and after that, you will observe a new tab <strong>Git</strong> is RStudio, and a bunch of new files and folders :</p>
+<p>RStudio will ask you to restart and after that, you will observe a new <strong>Git</strong> tab in RStudio, and a bunch of new files and folders :</p>
 <p><img src="{{< blogdown/postref >}}index_files/screen_shots/3_c.png" width="500" /></p>
-<p>Your timeline is now ready to use ! Each time you will make a modification, it will appear in the git tab. Let’s try ! We are going to change the description file to indicate what your project is about :</p>
+<p>Your timeline is now ready to use ! Each time you will make a modification, it will appear in the git tab. Let’s try it ! We are going to change the description file to indicate what the project is about :</p>
 <p><img src="{{< blogdown/postref >}}index_files/screen_shots/3_d.png" width="500" /></p>
 <p>The modification on the description file is now visible in the git tab :</p>
 <p><img src="{{< blogdown/postref >}}index_files/screen_shots/3_e.png" width="500" /></p>
 <p>To take a snapshot of your project (i.e. to save the actual version of your project), you need to select all the modifications and click on the button <code>commit</code>.</p>
 <p><img src="{{< blogdown/postref >}}index_files/screen_shots/3_f.png" width="500" /></p>
-<p>A new window will pop, with detail of the modifications. Before taking the snapshot (before committing), write a comment so you know what modifications correspond to this new version. When that is done, you can click on the button <code>commit</code> : the snapshot is done. The git tab is clean again.</p>
+<p>A new window will pop up, with details of the modifications. Before taking the snapshot (before committing), write a comment so you know what improvements you made in this new version. When that is done, you can click on the button <code>commit</code> : the snapshot is done. The git tab is clean again.</p>
 <p><img src="{{< blogdown/postref >}}index_files/screen_shots/3_g.png" width="500" /></p>
 </div>
 <div id="from-local-to-distance" class="section level2">
@@ -57,8 +57,8 @@ Don’t forget to commit your change… and that’s it, you are now ready to wo
 </div>
 <div id="from-github-to-rstudio-the-other-way-to-do-it" class="section level1">
 <h1>From Github to RStudio : the other way to do it</h1>
-<p>Another (and simpler) way to do this is to create a project from GitHub and to upload it in your computer (locally). To do so, connect to your GitHub account, go in <strong>Repositories</strong> tab and click to <strong>New</strong>. Allow GitHub to add a README file, a licence (GNU Affero General Public License v3.0) and a .gitignore (R). The new repository created on GitHub containing 3 files : a .gitignore, a LICENSE and a. README.md visible on github. Then go on <strong>code</strong> tab and copy the SSH link.</p>
-<p>Now open Rstudio and go here <em>file</em> &gt; <em>new project</em> &gt; <em>version control</em> &gt; <em>git</em> past the SSH link and choose the location of the file that will contain your future project. This new project will immediately be linked to your GitHub repository. Once the project is created locally you will see 3 files: a .Rproj, the LICENSE and the README.md. However 3 others invisible files are created : a .gitignore, a .git and a .Rproj.user. They are hidden, but you can see them on R studio or GitHub and if you reveal hidden files. You can now complete your compendium by creating the different file as in the first part of this tutorial.</p>
+<p>Another (and simpler) way to do this is to create a project from GitHub and to upload it in your computer (locally). To do so, connect to your GitHub account, go in <strong>Repositories</strong> tab and click to <strong>New</strong>. Allow GitHub to add a README file, a licence (GNU Affero General Public License v3.0) and a .gitignore (R). The new repository created on GitHub contains 3 files : a .gitignore, a LICENSE and a. README.md. Then go on <strong>code</strong> tab and copy the SSH link.</p>
+<p>Now open Rstudio and click on <em>file</em> &gt; <em>new project</em> &gt; <em>version control</em> &gt; <em>git</em>. Paste the SSH link and choose the location of the file that will contain your future project. This new project will immediately be linked to your GitHub repository. Once the project is created locally you will see 3 files: a .Rproj, the LICENSE and the README.md. However 3 others invisible files are created : a .gitignore, a .git and a .Rproj.user. They are hidden, but you can see them on R studio or GitHub if you reveal hidden files. You can now complete your compendium by creating the different files needed, as in the previous tutorial.</p>
 <p><br/></p>
 <p><img src="{{< blogdown/postref >}}index_files/images/octocats.png" width="800" /></p>
 </div>

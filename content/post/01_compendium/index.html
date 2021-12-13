@@ -13,17 +13,17 @@ bibliography: "biblio/biblio.bib"
 <style> body {text-align: justify} </style>
 <div id="create-a-research-compendium" class="section level2">
 <h2>Create a research compendium</h2>
-<p>A research compendium is a folder providing data, code, and documentation, i.e. all you need to get a reproducing a scientific workflow ! To create this amazing tool, open RStudio and create a new R-Project : <em>File &gt; New Project…</em></p>
+<p>A research compendium is a folder providing data, code, and documentation, i.e. all you need to get a reproducing scientific workflow ! To create this amazing tool, open RStudio and create a new R-Project : <em>File &gt; New Project…</em></p>
 <p><img src="screen_shots/1_a.png" width="400" /></p>
 <p>Choose <em>New Directory</em> and then <em>New Project</em>.</p>
 <p><img src="screen_shots/1_b.png" width="400" />
-A new R-Project is create, it looks like this :</p>
+A new R-Project is created, it looks like this :</p>
 <p><img src="screen_shots/1_c.png" width="800" /></p>
 <p>Now the project is created, we are going to organize it as a compendium. To do so, write the following command in the R console :</p>
 <pre class="r"><code>rrtools::use_compendium(&quot;../Pickachu/&quot;, open = FALSE)</code></pre>
 <p><img src="screen_shots/1_d.png" width="800" /></p>
 <p><img src="screen_shots/1_e.png" width="800" /></p>
-<p>This function will create 4 new documents : 2 visible (DESCRIPTION and NAMESPACE) and 2 invisible (.Rhistory, .Rbuildignore.). DESCRIPTION is an important file : it will be used to store the packages versions of the project, for good reproducible work !</p>
+<p>This function will create 4 new documents : 2 visible (DESCRIPTION and NAMESPACE) and 2 invisible (.Rhistory, .Rbuildignore.). DESCRIPTION is an important file : it will be used to store the packages versions of the project.</p>
 <p><img src="screen_shots/1_f.png" width="400" /></p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="Aligatueur.png" alt="Your are doing a great job - Pokepedia" width="50%" />
@@ -34,12 +34,12 @@ Figure 1: Your are doing a great job - Pokepedia
 </div>
 <div id="complete-your-project-architecture" class="section level2">
 <h2>Complete your project architecture</h2>
-<p>Now you can complete your folder architecture with more personal folders. Because you may work with datas, I suggest you to do something like that:</p>
+<p>Now you can complete your folder architecture with more personal folders. If you work with datas, I suggest you do something like this :</p>
 <p><img src="screen_shots/2_a.png" width="200" /></p>
 <p>The following folders are created in your R-Project.</p>
 <p><img src="screen_shots/2_b.png" width="400" /></p>
-<p>The idea is to store you data in the <em>data</em> file, write the functions in the <em>R</em> file, and write the scripts for your different analysis in <em>analysis</em>. The results of those analysis will be stored in <em>outputs</em>.</p>
-<p>Do you know that they are many articles about Pokemon <span class="citation">(<a href="#ref-Kawahara2018" role="doc-biblioref">Kawahara, Noto, and Kumagai 2018</a>)</span> ?</p>
+<p>The idea is to store your datas in the <em>data</em> file, write your functions in the <em>R</em> file and your analysis scripts (which call for functions) in the <em>analysis</em> file. The results of those analysis will be stored in the <em>outputs</em> file.</p>
+<p>The data set we will use in this tutorial is about Pokemons. Actually, did you know that there exists many articles about Pokemon ? Here is an exemple <span class="citation">(<a href="#ref-Kawahara2018" role="doc-biblioref">Kawahara, Noto, and Kumagai 2018</a>)</span> !</p>
 <div id="references" class="section level5 unnumbered">
 <h5>References</h5>
 <div id="refs" class="references csl-bib-body hanging-indent">

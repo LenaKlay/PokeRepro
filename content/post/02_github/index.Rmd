@@ -12,11 +12,11 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 ## Why Git ?
 
-You now have your new brand research compendium built on your laptop. That's great ! The idea now is to track changes in a project efficiently. To do so, we use git, a control version application. Instead of saving only the latest version, git allows us to take snapshots of the project regularly so that we save a timeline. This is very interesting, especially to : 
+You now have a brand new research compendium built on your laptop. That's great ! The next step is to track changes efficiently in the project . To do so we use git which is a control version application : instead of saving only the latest version, git allows us to take snapshots of the project regularly so that we save the full timeline. This is very interesting, especially to : 
 
 - Track all the modifications made by you or your collaborators in the past and enhance reproducibility.
-- Restore any old version of the project at anytime.
-- Work together efficiently by managing all the contributions and the version conflicts.
+- Restore any old version of the project at any time.
+- Work together efficiently by managing contributions and solve possible version conflicts.
 
 ![Git octocat](index_files/images/git8.png){width=200px}
 
@@ -32,13 +32,13 @@ usethis::use_git()
 ![](index_files/screen_shots/3_a.png){width=500px}
 ![](index_files/screen_shots/3_b.png){width=500px}
 
-RStudio will ask you to restart, and after that, you will observe a new tab **Git** is RStudio, and a bunch of new files and folders :
+RStudio will ask you to restart and after that, you will observe a new **Git** tab in RStudio, and a bunch of new files and folders :
 
 ![](index_files/screen_shots/3_c.png){width=500px}
 
 
 
-Your timeline is now ready to use ! Each time you will make a modification, it will appear in the git tab. Let's try ! We are going to change the description file to indicate what your project is about : 
+Your timeline is now ready to use ! Each time you will make a modification, it will appear in the git tab. Let's try it ! We are going to change the description file to indicate what the project is about : 
 
 ![](index_files/screen_shots/3_d.png){width=500px}
 
@@ -51,7 +51,7 @@ To take a snapshot of your project (i.e. to save the actual version of your proj
 ![](index_files/screen_shots/3_f.png){width=500px}
 
 
-A new window will pop, with detail of the modifications. Before taking the snapshot (before committing), write a comment so you know what modifications correspond to this new version. When that is done, you can click on the button `commit` : the snapshot is done. The git tab is clean again.
+A new window will pop up, with details of the modifications. Before taking the snapshot (before committing), write a comment so you know what improvements you made in this new version. When that is done, you can click on the button `commit` : the snapshot is done. The git tab is clean again.
 
 ![](index_files/screen_shots/3_g.png){width=500px}
 
@@ -86,9 +86,9 @@ Don't forget to commit your change... and that's it, you are now ready to work !
 
 # From Github to RStudio : the other way to do it
 
-Another (and simpler) way to do this is to create a project from GitHub and to upload it in your computer (locally). To do so, connect to your GitHub account, go in **Repositories** tab and click to **New**. Allow GitHub to add a README file, a licence (GNU Affero General Public License v3.0) and a .gitignore (R). The new repository created on GitHub containing 3 files : a .gitignore, a LICENSE and a. README.md visible on github. Then go on **code** tab and copy the SSH link.  
+Another (and simpler) way to do this is to create a project from GitHub and to upload it in your computer (locally). To do so, connect to your GitHub account, go in **Repositories** tab and click to **New**. Allow GitHub to add a README file, a licence (GNU Affero General Public License v3.0) and a .gitignore (R). The new repository created on GitHub contains 3 files : a .gitignore, a LICENSE and a. README.md. Then go on **code** tab and copy the SSH link.  
 
-Now open Rstudio and go here *file* > *new project* > *version control* > *git* past the SSH link and choose the location of the file that will contain your future project. This new project will immediately be linked to your GitHub repository. Once the project is created locally you will see 3 files: a .Rproj, the LICENSE and the README.md. However 3 others invisible files are created : a .gitignore, a .git and a .Rproj.user. They are hidden, but you can see them on R studio or GitHub and if you reveal hidden files. You can now complete your compendium by creating the different file as in the first part of this tutorial. 
+Now open Rstudio and click on *file* > *new project* > *version control* > *git*. Paste the SSH link and choose the location of the file that will contain your future project. This new project will immediately be linked to your GitHub repository. Once the project is created locally you will see 3 files: a .Rproj, the LICENSE and the README.md. However 3 others invisible files are created : a .gitignore, a .git and a .Rproj.user. They are hidden, but you can see them on R studio or GitHub if you reveal hidden files. You can now complete your compendium by creating the different files needed, as in the previous tutorial. 
 
 
 <br/>

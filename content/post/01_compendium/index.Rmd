@@ -12,14 +12,14 @@ bibliography: "biblio/biblio.bib"
 
 ## Create a research compendium
 
-A research compendium is a folder providing data, code, and documentation, i.e. all you need to get a reproducing a scientific workflow ! To create this amazing tool, open RStudio and create a new R-Project : *File > New Project...*
+A research compendium is a folder providing data, code, and documentation, i.e. all you need to get a reproducing scientific workflow ! To create this amazing tool, open RStudio and create a new R-Project : *File > New Project...*
 
 ![](screen_shots/1_a.png){width=400px}
 
 Choose *New Directory* and then *New Project*.
 
 ![](screen_shots/1_b.png){width=400px}
-A new R-Project is create, it looks like this : 
+A new R-Project is created, it looks like this : 
 
 ![](screen_shots/1_c.png){width=800px}
 
@@ -33,7 +33,7 @@ rrtools::use_compendium("../Pickachu/", open = FALSE)
 
 ![](screen_shots/1_e.png){width=800px}
   
-This function will create 4 new documents : 2 visible (DESCRIPTION and NAMESPACE) and 2 invisible (.Rhistory, .Rbuildignore.). DESCRIPTION is an important file : it will be used to store the packages versions of the project, for good reproducible work ! 
+This function will create 4 new documents : 2 visible (DESCRIPTION and NAMESPACE) and 2 invisible (.Rhistory, .Rbuildignore.). DESCRIPTION is an important file : it will be used to store the packages versions of the project.
 
 
 ![](screen_shots/1_f.png){width=400px}
@@ -45,7 +45,7 @@ knitr::include_graphics("Aligatueur.png")
 
 ## Complete your project architecture  
 
-Now you can complete your folder architecture with more personal folders. Because you may work with datas, I suggest you to do something like that: 
+Now you can complete your folder architecture with more personal folders. If you work with datas, I suggest you do something like this : 
 
 ![](screen_shots/2_a.png){width=200px}
 
@@ -53,8 +53,8 @@ The following folders are created in your R-Project.
 
 ![](screen_shots/2_b.png){width=400px}
 
-The idea is to store you data in the *data* file, write the functions in the *R* file, and write the scripts for your different analysis in *analysis*. The results of those analysis will be stored in *outputs*.
+The idea is to store your datas in the *data* file, write your functions in the *R* file and your analysis scripts (which call for functions) in the *analysis* file. The results of those analysis will be stored in the *outputs* file.
 
-Do you know that they are many articles about Pokemon [@Kawahara2018] ? 
+The data set we will use in this tutorial is about Pokemons. Actually, did you know that there exists many articles about Pokemon ? Here is an exemple [@Kawahara2018] !
 
 ##### References 
