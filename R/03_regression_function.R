@@ -12,20 +12,21 @@
 ## This script create 2 outputs, a linear model in a .RData and coefficient's linear model in a .csv
 ## 
 ## Copyright (c) Erwan Harscouet
-## Email: thisismyemail@goratatac.fr
+## Email: hello@timfarewell.co.uk
 ##
 ## ------------------------------------------------------------------------------------------------------------
 
-
 #' Title
 #'
-#' @param initial.df pokedata
+#' @param suitable.df The formatted dataframe poke
 #'
-#' @return pokeclean
+#' @return A R object containing the regression model and a .csv containing the model coefficients 
 #' @export
 #'
 #' @examples
-pokeclean <- function(initial.df){
-  pokedata <- pokedata[-which(pokedata$generation %in% c("4", "5", "6", "7")), ]
-  pokedata <- pokedata[,-which(names(pokedata) %in% c("japanese_name","classfication"))]
+regression_attack_weight <- function(suitable.df){
+  model1 <- lm(attack ~ weight_kg, poke)
+  save(model1, file = here::here("outputs","04_regression_weight_attack.RData"))
+  coefmodel1 <- as.data.frame(summary(lm(attack ~ weight_kg, poke))$coefficient)
+  readr::write_csv(coefmodel1, file = here::here("outputs","04_regression_weight_attack_coef.csv"))
 }

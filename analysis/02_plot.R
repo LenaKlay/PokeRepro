@@ -16,16 +16,7 @@
 ##
 ## ------------------------------------------------------------------------------------------------------------
 
-
-#' Title
-#'
-#' @param initial.df pokedata
-#'
-#' @return pokeclean
-#' @export
-#'
-#' @examples
-pokeclean <- function(initial.df){
-  pokedata <- pokedata[-which(pokedata$generation %in% c("4", "5", "6", "7")), ]
-  pokedata <- pokedata[,-which(names(pokedata) %in% c("japanese_name","classfication"))]
-}
+list_df <- data_prep_pokeplot01(suitable.df = pokedatacleaned)
+pokebytype <- list_df$df1
+poke <- list_df$df2
+pokeplot01(freq.type.df = pokebytype, cor.df = poke)

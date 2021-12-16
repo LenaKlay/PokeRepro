@@ -16,16 +16,5 @@
 ##
 ## ------------------------------------------------------------------------------------------------------------
 
+regression_attack_weight()
 
-#' Title
-#'
-#' @param initial.df pokedata
-#'
-#' @return pokeclean
-#' @export
-#'
-#' @examples
-pokeclean <- function(initial.df){
-  pokedata <- pokedata[-which(pokedata$generation %in% c("4", "5", "6", "7")), ]
-  pokedata <- pokedata[,-which(names(pokedata) %in% c("japanese_name","classfication"))]
-}

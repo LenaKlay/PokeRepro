@@ -13,17 +13,18 @@
 
 
 # Give the relative path to the data and read the data:
-data_poke <- readr::read_csv(here::here("data", "pokemon.csv"))
+pokedata <- readr::read_csv(here::here("data", "pokemon.csv"))
 
 # Install dependencies
-devtools::install_deps()
-
+#devtools::install_deps()
 
 #  Load defined functions of the R folder
 source(here::here("R", "01_clean_data_function.R"))
 source(here::here("R", "02_plot_function.R"))
+source(here::here("R", "03_regression_function.R"))
 
 # Run analyses scripts
 source(here::here("analysis", "01_clean_data.R"))
 source(here::here("analysis", "02_plot.R"))
+source(here::here("analysis", "03_regression.R"))
 
