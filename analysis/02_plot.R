@@ -16,7 +16,7 @@
 ##
 ## ------------------------------------------------------------------------------------------------------------
 
-list_df <- data_prep_pokeplot01(suitable.df = pokedatacleaned)
+list_df <- prep.pokeplot(poke_cleaned = pokedatacleaned)
 pokebytype <- list_df$df1
 poke <- list_df$df2
-pokeplot01(freq.type.df = pokebytype, cor.df = poke)
+poke.plot01(pokebytype = pokebytype, poke = poke, save = TRUE)
