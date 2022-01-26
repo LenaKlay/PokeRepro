@@ -6,25 +6,121 @@ categories: ["R"]
 tags: ["tmtcbythecc"]
 ---
 
-Good practise coding: 
+## Introduction
 
-When you code do package::function when you call a function.
-When you use a package you have to add it to the DESCRIPTION FILE. Do do so you can right in the consol `usethis:use_package(random_name_of_package)` instead of `install.package()`
-Also, for each script do not forget to add a header (see example)
 
-Now you are suppose to have a beautiful project structure link to gitHub. Now that we finished to create the basis of the project we will start it ! We will begin by create a new function. 
+The basis of reproducibility is writing **R functions** instead of duplicating your code. Using functions helps you to have cleaner scripts and helps others to better understand your code: if you have weel-written functions with associated documentation, then others only have to read the documentation of your functions to understand your code. It's way better than reading thousands of comments, right? No, let's have a look at this wonderful and easy code technique that will revolutionize your code! 
 
+
+![Pokemon Artwork from Le Hollandais Volant](images/happy_familly.jpg){width=200px}
+
+
+A function is a R object which <span style="color: aquamarine;">take as inputs objects that will feed the function</span>, <span style="color: aquamarine;">apply</span> to these inputs <span style="color: aquamarine;">some operations you define</span> and then <span style="color: aquamarine;">give as outputs the results you want to have.</span>
+
+
+<span style="color: grey;">In this tutorial we will create together one function from A to Z and the associated documentation which is **really important**. This function will clean the Pokemon Dataset and only keep Pokemons from the first, second and third generations and ... </span>
+
+
+## 1 - Creating a new R file that will contain the function
+
+TO BE COMPLETED ----------------------------------------------------------------------------
 To do so we will create a new script. As we said we will use the R file to put inside R scripts that construct functions. The name of the script is really important, we will call it 01_clean_data_function.R. Each script that create function will finish by "function". We will create a function to clean the dataset.  
 
 We open 01_clean_data_function.R and we write : 
 
+
+
+## 2 - Defining your function
+
+
+The first step when writing a function is to **define it**. 
+
+To do so you just have to:
+
+* chose the name you will give to your function: <span style="color: grey;">in our example, the function will be called *pokeclean* as it cleans the Pokemon dataset.</span>
+
+* chose which objects are needed as inputs for your function to work: <span style="color: grey;">in our example,  we just need the Pokemon dataset called *poke* </span> 
+
+* follow the following coding style:
+
+<span style="color: grey;">function_name <- function(list here the inputs) {</span>
+
+<span style="color: grey;">}</span> 
+
+
+<span style="color: grey;"> The definition of the function cleaning the Pokemon dataset will thus looks as follow:
+
 ```{r, eval=FALSE}
 pokeclean <- function(poke){
+  ...
+}
+```
+
+
+Great, you have defined your first function!
+
+
+![Meme from Chualbox](images/taupiqueur_meme_football.jpg){width=200px}
+
+
+
+
+## 3 - Coding your function
+
+
+Then, the next step is to complete the function with all the operations we want to do, replacing the "..." in the above code.
+
+To do so, you can create intermediate objects that help you to store intermediate objects needed for the computation of your function, you can call other functions that you have already created or that belong to R base or R packages *etc.*
+**Never forget to comment your function!** Because if other people (or you several months from now) want to understand each line of your function, they should be able to do so!
+
+
+<span style="color: grey;">In our example the function looks as follow:</span> 
+
+
+```{r, eval = FALSE}
+pokeclean <- function(poke){
+  
+  # only keep 1st, 2nd and 3rd generations:
   poke2 <- poke[-poke$generation %in% c("4", "5", "6", "7"), ]
+  
+  # ... 
   poke3 <- poke2[,-which(names(poke2) %in% c("japanese_name","classfication"))]
+}
+```
+
+
+
+<span style="color: aquamarine;">When you code your function, **never forget** these Coding Styles:</span>
+
+* if you **call a function from a R package**, use `package_name::function_name()` instead of only `function_name()`. <span style="color: aquamarine;">Why?</span> If you use `function_name()`, then you will have to call the package it belongs to by using the `library(package_name)` command. But, you should never use `library(package_name)` because different functions belonging to different packages can have the same name, thus using this coding style helps the code readability and prevent conflicts.
+
+* if you **call a function from a R package**, you should add this package to the `DESCRIPTION` file. Do do so, you can directly write in the consol `usethis:use_package(package_name)` and it will automatiquely add it to the `DESCRIPTION` file.
+
+
+Then, you have to chose the object(s) to return as output(s) of your function. To do so, you use the `return()` function (quite easy right?). 
+
+<span style="color: grey;">In our example, we want to return the cleaned dataset called *poke3*, thus the full function looks as follow:</span> 
+
+
+
+```{r, eval = FALSE}
+pokeclean <- function(poke){
+  
+  # only keep 1st, 2nd and 3rd generations:
+  poke2 <- poke[-poke$generation %in% c("4", "5", "6", "7"), ]
+  
+  # ... 
+  poke3 <- poke2[,-which(names(poke2) %in% c("japanese_name","classfication"))]
+  
+  # return the cleaned dataset:
   return(poke3)
 }
 ```
+
+
+
+
+
 
 ```{r, eval=FALSE, echo=FALSE}
 poke <- read.csv("~/Desktop/PHD1/Formation/Reproductibility/PokeRepro/data/pokemon.csv")
@@ -32,9 +128,8 @@ a <- as.data.frame(table(poke$type1))
 ```
 
 
-```{r, echo=FALSE, fig.cap="Taupiqueur attack - Coualbox", out.width = '40%'}
-knitr::include_graphics("taupiqueur_meme_football.jpg")
-```
+
+
 
 When you create a function you also have to create a header Roxygene. Its will allow you to have an acces to the help menu doing ?myfunction. This will be useful for you if you have many functions or for anyone that may use your function. 
 
