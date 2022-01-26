@@ -82,8 +82,6 @@ If you are new to the subject, you can follow the tutorials in this order:
 
 * 4 - Create an automatised workflow: using make.R or the targets package
 
-* 5 - Create and isolated and portable environment using renv
-
 
 Now let's do reproducible research!
 
