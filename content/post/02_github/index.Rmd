@@ -70,7 +70,7 @@ usethis::use_github()
 
 
 Since GitHub is a bit grumpy with token, if you get an error make sure you have done well the last instruction of the toolbox file (available 
-[here](https://frbcesab.github.io/datatoolbox/instructions.html) ) :
+[here](https://rdatatoolbox.github.io/instructions.html) ) :
 
 ![](index_files/images/github_pat.png){width=500px}
 If everything went well, a new repository has been created in your GitHub account.
