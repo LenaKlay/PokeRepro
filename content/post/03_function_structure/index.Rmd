@@ -119,16 +119,7 @@ pokeclean <- function(poke){
 
 
 
-
-
-
-```{r, eval=FALSE, echo=FALSE}
-poke <- read.csv("~/Desktop/PHD1/Formation/Reproductibility/PokeRepro/data/pokemon.csv")
-a <- as.data.frame(table(poke$type1))
-```
-
-
-
+## 3 - Documenting your function
 
 
 When you create a function you also have to create a header Roxygene. Its will allow you to have an acces to the help menu doing ?myfunction. This will be useful for you if you have many functions or for anyone that may use your function. 
@@ -179,3 +170,7 @@ We will create another function but this time it will concern.
 -dans ouputs on creer “04_regression_weight_attack.png” 
 -dans ouputs on creer “04_regression_weight_attack.RDATA”
 
+```{r, eval=FALSE, echo=FALSE}
+poke <- read.csv("~/Desktop/PHD1/Formation/Reproductibility/PokeRepro/data/pokemon.csv")
+a <- as.data.frame(table(poke$type1))
+```
