@@ -118,8 +118,22 @@ pokeclean <- function(poke){
 ```
 
 
+Your first funcion is now finished, congratulations! You now need one last step which is essential if you want others (or you in several months) to use your function...
+
 
 ## 3 - Documenting your function
+
+
+... Yes, you need to document your function which means:
+
+* explain what is the purpose of your function
+
+* describe each input your function needs, that is to say describing its type and what it represents
+
+* describe what the function returns
+
+* add any note you think is interesting for the user
+
 
 
 When you create a function you also have to create a header Roxygene. Its will allow you to have an acces to the help menu doing ?myfunction. This will be useful for you if you have many functions or for anyone that may use your function. 
