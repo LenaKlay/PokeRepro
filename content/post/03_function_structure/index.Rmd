@@ -224,7 +224,33 @@ And now it is done! You have successfully coded and documented your function, yo
 
 
 
-## 4 - Let's create a new function!
+## 5 - Let's use this new function!
+
+
+Now that you have coded your function, you can use it! To do so you create a **new R script** in the **analysis**folder. As said in *1 - Create a research Compendium*:
+
+* **the <span style="color: aquamarine;">analysis</span> folder of your Research Compendium gathers scripts used for analysis**. In these scripts you can call functions you have coded.
+
+* **functions you have coded are gathered in the <span style="color: aquamarine;">R</span> folder of your Research Compendium**
+
+
+As when creating a new R script for function, the top of your R script can contain some **rows to explain what is doing the script, who wrote it** *etc*. It is very recommended to do so for each R script you are coding.
+
+
+You must also give a file name which clearly explains what is inside the analysis file and you can use a number at the begining of the script name to know thereafter in which order scripts must be used. <span style="color: grey;">For example, we will call this new analysis script "01_clean_data.R"</span>
+
+
+
+COMPLETE HERE AND SAY WHAT IS INSIDE AND THAT IT CAN BE MORE COMPLICATED AND THAT HERE IT IS A REALLY SIMPLE EXAMPLE BUT MOST OF THE TIME IT AS SEVERAL ROWS which call or not functions coded by the owner of the research compendium
+
+
+
+
+
+
+## 6 - Create new functions and new analysis scripts
+
+
 
 
 Now let's say that you have to create a function to plot something. Because this function isn't link with data manipulation we will create a new script R. We will call it **02_plot_function.R**
