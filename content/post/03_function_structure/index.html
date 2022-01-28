@@ -21,9 +21,15 @@ tags: ["tmtcbythecc"]
 </div>
 <div id="creating-a-new-r-file-that-will-contain-the-function" class="section level2">
 <h2>1 - Creating a new R file that will contain the function</h2>
-<p>TO BE COMPLETED —————————————————————————-
-To do so we will create a new script. As we said we will use the R file to put inside R scripts that construct functions. The name of the script is really important, we will call it 01_clean_data_function.R. Each script that create function will finish by “function”. We will create a function to clean the dataset.</p>
-<p>We open 01_clean_data_function.R and we write :</p>
+<p>You have to create a new <strong>R script</strong> in the <strong>R folder</strong> of your Research Compendium.
+This <strong>R folder</strong> must contain all the functions you code by yourself and want to use in your analysis.</p>
+<p><strong>At the begining of this new R script</strong>, you can add rows which explain what is in the script, when it was coded, by who <em>etc</em> as follow:</p>
+<div class="figure">
+<img src="images/rscript_structure.PNG" width="700" alt="" />
+<p class="caption">Screenshot of the begining of a R script</p>
+</div>
+<p><strong>The name of this R script that will contain a function</strong>, must have a really clear name (according to what you do in your script) and you can use a number at the begining of the script name to know thereafter in which order scripts and functions must be used. <span style="color: grey;">In our example, can name the R script “01_clean_data_function.R”. The name explain that in this script which have to be used in the first place, a function is coded to clean a dataset </span></p>
+<p>Then, your file is ready to welcome your wonderful new function!</p>
 </div>
 <div id="defining-your-function" class="section level2">
 <h2>2 - Defining your function</h2>
@@ -57,7 +63,7 @@ To do so we will create a new script. As we said we will use the R file to put i
   # only keep 1st, 2nd and 3rd generations:
   poke2 &lt;- poke[-poke$generation %in% c(&quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;), ]
   
-  # ... 
+  # remove japanese name and classification informations: 
   poke3 &lt;- poke2[,-which(names(poke2) %in% c(&quot;japanese_name&quot;,&quot;classfication&quot;))]
 }</code></pre>
 <p><span style="color: aquamarine;">When you code your function, <strong>never forget</strong> these Coding Styles:</span></p>
@@ -72,13 +78,18 @@ To do so we will create a new script. As we said we will use the R file to put i
   # only keep 1st, 2nd and 3rd generations:
   poke2 &lt;- poke[-poke$generation %in% c(&quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot;), ]
   
-  # ... 
+  # remove japanese name and classification informations: 
   poke3 &lt;- poke2[,-which(names(poke2) %in% c(&quot;japanese_name&quot;,&quot;classfication&quot;))]
   
   # return the cleaned dataset:
-  return(poke3)
+  return(pokecleaned = poke3)
 }</code></pre>
-<p>Your first funcion is now finished, congratulations! You now need one last step which is essential if you want others (or you in several months) to use your function…</p>
+<p>Your first function is now finished, congratulations!</p>
+<div class="figure">
+<img src="images/congratulations.jpg" width="200" alt="" />
+<p class="caption">Artwork from Pinterest (<a href="https://www.pinterest.fr/pin/626774473124355096/" class="uri">https://www.pinterest.fr/pin/626774473124355096/</a>)</p>
+</div>
+<p>You now need one last step which is essential if you want others (or you in several months) to use your function…</p>
 </div>
 <div id="documenting-your-function" class="section level2">
 <h2>3 - Documenting your function</h2>
@@ -89,26 +100,56 @@ To do so we will create a new script. As we said we will use the R file to put i
 <li><p>describe what the function returns</p></li>
 <li><p>add any note you think is interesting for the user</p></li>
 </ul>
-<p>When you create a function you also have to create a header Roxygene. Its will allow you to have an acces to the help menu doing ?myfunction. This will be useful for you if you have many functions or for anyone that may use your function.</p>
-<p>To do so you put your mouse cursor at the begegning of the function you just created. Then you go on <em>code</em>&gt;<em>Insert Roxygene Squeleton</em></p>
-<p>#’ Title<br />
-#’<br />
-#’ <span class="citation">@param</span> poke<br />
-#’<br />
-#’ <span class="citation">@return</span><br />
-#’ <span class="citation">@export</span><br />
-#’<br />
-#’ <span class="citation">@examples</span><br />
-pokeclean &lt;- function(poke){</p>
-<p>Now you will modify it, we can do something like this:</p>
-<p>#’ pokeclean is a function that take in input a dataframe and select only the 3 first generations of pokemons and remouve the japanese_name and classfication.<br />
-#’<br />
-#’ <span class="citation">@param</span> poke<br />
-#’<br />
-#’ <span class="citation">@return</span> a dataframe<br />
-#’ <span class="citation">@export</span><br />
-#’<br />
-#’ <span class="citation">@examples</span> there is no examples</p>
+<p>It will allow you to have an acces to the help menu doing ?myfunction.</p>
+<p>To do so, you must create a <em>Roxygen squeleton</em> created by the <span style="color: purple;">the roxygen2 package</span>. Don’t worry, it is very simple: move your cursor inside the function you just created (like the following picture) and then, in Rstudio, go on <em>Code</em> &gt; <em>Insert Roxygen Squeleton</em> (you can also write the roxygen squeletton by yourself).</p>
+<div class="figure">
+<img src="images/function_cursor.PNG" width="700" alt="" />
+<p class="caption">Move your cursor inside the function definition</p>
+</div>
+<p><span style="color: grey;">In our example, it will render something like that:</span></p>
+<p>#’ Title <br>
+#’ <span class="citation">@param</span> poke <br>
+#‘<br>
+#’ <span class="citation">@return&lt;br</span>&gt;
+#’ <br>
+#’ <span class="citation">@export</span> <br>
+#‘<br>
+#’ <span class="citation">@examples</span> <br></p>
+<p>Now we are going to go through each row:</p>
+<ul>
+<li><p>the first row #’<strong>Title</strong> must be the … Title of your function. This question was quite difficult I know ;)
+<span style="color: grey;">In our example, we will write: Function which clean the Pokemon dataset by selecting only 1st, 2nd and 3rd generations and removing japanese name and classification</span>
+In fact, you can also have a first row refering to the global name of your function (<span style="color: grey;">In our example, we can write: Cleaning the Pokemon dataset</span>) and then a second row going more into details about your function (<span style="color: grey;">In our example, we can write: this function cleans the Pokemon dataset by selecting only 1st, 2nd and 3rd generations and removing japanese name and classification</span>).</p></li>
+<li><p>the second row #’<strong><span class="citation">@param</span></strong> must be followed by the name of the input. You should have as many <span class="citation">@param</span> lines as you have inputs. It must look like that <code>@param name_of_the_input description of the input</code>. The description of the inputs must describe the type of input (list, vector, dataframe, matrix <em>etc</em>), what it contains and any information you think is usefull to understand the input.
+<span style="color: grey;">In our example, we will write: <span class="citation">@param</span> poke a dataframe gathering the information about Pokemons. It was downloaded at <a href="https://www.kaggle.com/rounakbanik/pokemon" class="uri">https://www.kaggle.com/rounakbanik/pokemon</a>. </span>
+In this function <code>pokeclean</code>, we do not have any other inputs so we will only have one line called <span class="citation">@param</span>.</p></li>
+<li><p>the third row #’<strong><span class="citation">@return</span></strong> must contain the name of the output(s) and what they contain. You only have one <span class="citation">@return</span> row even if the function as several outputs. In fact, if your function returns several outputs, they will be gathered in a unique list or vector, thus the output will be one unique object.
+<span style="color: grey;">In our example, we will write: <span class="citation">@return</span> pokecleaned a dataframe gathering the information about Pokemons with only Pokemons from the 1st, 2nd and 3rd generations and with no information about their japanese names and classifications.</span></p></li>
+<li><p>the fourth row, #’<strong><span class="citation">@export</span></strong> tells <span style="color: purple;">the roxygen2</span> to add this function to the <code>NAMESPACE</code> file, so that it will be accessible when you want to use it.</p></li>
+<li><p>the fifth row #’<strong><span class="citation">@example</span></strong> can contain an working example of how to use your function. It is not mandatory and here we will not give any example.</p></li>
+<li><p>then, you can add other rows (called <em>tags</em> in the <span style="color: purple;">the roxygen2</span> language)</p></li>
+</ul>
+<p><span style="color: grey;">So, in our example, the updated roxygen squeleton will look as follow (with no empty lines:</span></p>
+<p>#’ Cleaning the Pokemon dataset <br>
+#’ <br>
+#’ This function cleans the Pokemon dataset by selecting only 1st, 2nd and 3rd generations and removing <br>
+#’ japanese name and classification <br>
+#’ <br>
+#’ <span class="citation">@param</span> poke a dataframe gathering the information about Pokemons. It was downloaded at <br>
+#’ <a href="https://www.kaggle.com/rounakbanik/pokemon" class="uri">https://www.kaggle.com/rounakbanik/pokemon</a>. <br>
+#’ <br>
+#’ <span class="citation">@return</span> pokecleaned a dataframe gathering the information about Pokemons with only Pokemons from the
+#’ 1st, 2nd and 3rd generations and with no information about their japanese names and classifications. <br>
+#’ <br>
+#’ <span class="citation">@export</span> <br></p>
+<p>And now it is done! You have successfully coded and documented your function, you are an intermediate warrior in code reproducibility!</p>
+<div class="figure">
+<img src="images/reading.jpg" width="200" alt="" />
+<p class="caption">Artwork from Amino App</p>
+</div>
+</div>
+<div id="lets-create-a-new-function" class="section level2">
+<h2>4 - Let’s create a new function!</h2>
 <p>Now let’s say that you have to create a function to plot something. Because this function isn’t link with data manipulation we will create a new script R. We will call it <strong>02_plot_function.R</strong></p>
 <p>We will create another function but this time it will concern.
 -on creer une function dans le dossier R “01_clean_data_function”

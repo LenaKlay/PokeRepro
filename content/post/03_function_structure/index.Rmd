@@ -23,10 +23,21 @@ A function is a R object which <span style="color: aquamarine;">take as inputs o
 
 ## 1 - Creating a new R file that will contain the function
 
-TO BE COMPLETED ----------------------------------------------------------------------------
-To do so we will create a new script. As we said we will use the R file to put inside R scripts that construct functions. The name of the script is really important, we will call it 01_clean_data_function.R. Each script that create function will finish by "function". We will create a function to clean the dataset.  
 
-We open 01_clean_data_function.R and we write : 
+You have to create a new **R script** in the **R folder** of your Research Compendium. 
+This **R folder** must contain all the functions you code by yourself and want to use in your analysis.
+
+**At the begining of this new R script**, you can add rows which explain what is in the script, when it was coded, by who *etc* as follow:
+
+
+![Screenshot of the begining of a R script](images/rscript_structure.PNG){width=700px}
+
+
+
+**The name of this R script that will contain a function**, must have a really clear name (according to what you do in your script) and you can use a number at the begining of the script name to know thereafter in which order scripts and functions must be used. <span style="color: grey;">In our example, can name the R script "01_clean_data_function.R". The name explain that in this script which have to be used in the first place, a function is coded to clean a dataset </span> 
+
+
+Then, your file is ready to welcome your wonderful new function!
 
 
 
@@ -83,7 +94,7 @@ pokeclean <- function(poke){
   # only keep 1st, 2nd and 3rd generations:
   poke2 <- poke[-poke$generation %in% c("4", "5", "6", "7"), ]
   
-  # ... 
+  # remove japanese name and classification informations: 
   poke3 <- poke2[,-which(names(poke2) %in% c("japanese_name","classfication"))]
 }
 ```
@@ -109,16 +120,23 @@ pokeclean <- function(poke){
   # only keep 1st, 2nd and 3rd generations:
   poke2 <- poke[-poke$generation %in% c("4", "5", "6", "7"), ]
   
-  # ... 
+  # remove japanese name and classification informations: 
   poke3 <- poke2[,-which(names(poke2) %in% c("japanese_name","classfication"))]
   
   # return the cleaned dataset:
-  return(poke3)
+  return(pokecleaned = poke3)
 }
 ```
 
 
-Your first funcion is now finished, congratulations! You now need one last step which is essential if you want others (or you in several months) to use your function...
+Your first function is now finished, congratulations! 
+
+![Artwork from Pinterest (https://www.pinterest.fr/pin/626774473124355096/)](images/congratulations.jpg){width=200px}
+
+
+
+You now need one last step which is essential if you want others (or you in several months) to use your function...
+
 
 
 ## 3 - Documenting your function
@@ -135,31 +153,79 @@ Your first funcion is now finished, congratulations! You now need one last step 
 * add any note you think is interesting for the user
 
 
+It will allow you to have an acces to the help menu doing ?myfunction. 
 
-When you create a function you also have to create a header Roxygene. Its will allow you to have an acces to the help menu doing ?myfunction. This will be useful for you if you have many functions or for anyone that may use your function. 
 
-To do so you put your mouse cursor at the begegning of the function you just created. Then you go on *code*>*Insert Roxygene Squeleton*
+To do so, you must create a *Roxygen squeleton* created by the <span style="color: purple;">the roxygen2 package</span>. Don't worry, it is very simple: move your cursor inside the function you just created (like the following picture) and then, in Rstudio, go on *Code* > *Insert Roxygen Squeleton* (you can also write the roxygen squeletton by yourself).
 
-#' Title  
-#'  
-#' @param poke   
-#'  
-#' @return  
-#' @export  
-#'  
-#' @examples  
-pokeclean <- function(poke){
+![Move your cursor inside the function definition](images/function_cursor.PNG){width=700px}
 
-Now you will modify it, we can do something like this: 
+<span style="color: grey;">In our example, it will render something like that:</span> 
 
-#' pokeclean is a function that take in input a dataframe and select only the 3 first generations of pokemons and remouve the japanese_name and classfication.  
-#'  
-#' @param poke  
-#'  
-#' @return a dataframe  
-#' @export  
-#'  
-#' @examples there is no examples  
+
+#' Title <br>
+#' @param poke <br>
+#'<br>
+#' @return<br>
+#' <br>
+#' @export <br>
+#'<br>
+#' @examples <br>
+
+
+Now we are going to go through each row:
+
+* the first row #'**Title** must be the ... Title of your function. This question was quite difficult I know ;) 
+<span style="color: grey;">In our example, we will write: Function which clean the Pokemon dataset by selecting only 1st, 2nd and 3rd generations and removing japanese name and classification</span>
+In fact, you can also have a first row refering to the global name of your function (<span style="color: grey;">In our example, we can write: Cleaning the Pokemon dataset</span>) and then a second row going more into details about your function (<span style="color: grey;">In our example, we can write: this function cleans the Pokemon dataset by selecting only 1st, 2nd and 3rd generations and removing japanese name and classification</span>).
+
+
+* the second row #'**@param** must be followed by the name of the input. You should have as many @param lines as you have inputs. It must look like that `@param name_of_the_input description of the input`. The description of the inputs must describe the type of input (list, vector, dataframe, matrix *etc*), what it contains and any information you think is usefull to understand the input. 
+<span style="color: grey;">In our example, we will write: @param poke a dataframe gathering the information about Pokemons. It was downloaded at https://www.kaggle.com/rounakbanik/pokemon. </span> 
+In this function  `pokeclean`, we do not have any other inputs so we will only have one line called @param.
+
+
+* the third row  #'**@return** must contain the name of the output(s) and what they contain. You only have one @return row even if the function as several outputs. In fact, if your function returns several outputs, they will be gathered in a unique list or vector, thus the output will be one unique object. 
+<span style="color: grey;">In our example, we will write: @return pokecleaned a dataframe gathering the information about Pokemons with only Pokemons from the 1st, 2nd and 3rd generations and with no information about their japanese names and classifications.</span> 
+
+
+* the fourth row, #'**@export** tells <span style="color: purple;">the roxygen2</span> to add this function to the `NAMESPACE` file, so that it will be accessible when you want to use it.
+
+
+* the fifth row #'**@example** can contain an working example of how to use your function. It is not mandatory and here we will not give any example.
+
+
+* then, you can add other rows (called *tags* in the <span style="color: purple;">the roxygen2</span> language)  
+
+
+<span style="color: grey;">So, in our example, the updated roxygen squeleton will look as follow (with no empty lines:</span>
+
+
+#' Cleaning the Pokemon dataset <br>
+#'  <br>
+#' This function cleans the Pokemon dataset by selecting only 1st, 2nd and 3rd generations and removing <br>
+#' japanese name and classification <br>
+#' <br>
+#' @param poke a dataframe gathering the information about Pokemons. It was downloaded at <br>
+#' https://www.kaggle.com/rounakbanik/pokemon. <br>
+#' <br>
+#' @return pokecleaned a dataframe gathering the information about Pokemons with only Pokemons from the 
+#' 1st, 2nd and 3rd generations and with no information about their japanese names and classifications.  <br>
+#' <br>
+#' @export  <br>
+
+
+
+And now it is done! You have successfully coded and documented your function, you are an intermediate warrior in code reproducibility!
+
+
+![Artwork from Amino App](images/reading.jpg){width=200px}
+
+
+
+
+## 4 - Let's create a new function!
+
 
 Now let's say that you have to create a function to plot something. Because this function isn't link with data manipulation we will create a new script R. We will call it **02_plot_function.R**
 
