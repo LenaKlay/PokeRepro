@@ -240,6 +240,8 @@ As when creating a new R script for function, the top of your R script can conta
 You must also give a file name which clearly explains what is inside the analysis file and you can use a number at the begining of the script name to know thereafter in which order scripts must be used. <span style="color: grey;">For example, we will call this new analysis script "01_clean_data.R"</span>
 
 
+Then, you can write code for analysis and comments (**never forget that commenting is the basis of any reproducible workflow ;)**)!  
+<span style="color: grey;">For example, we will call this new analysis script "01_clean_data.R"</span>
 
 COMPLETE HERE AND SAY WHAT IS INSIDE AND THAT IT CAN BE MORE COMPLICATED AND THAT HERE IT IS A REALLY SIMPLE EXAMPLE BUT MOST OF THE TIME IT AS SEVERAL ROWS which call or not functions coded by the owner of the research compendium
 
