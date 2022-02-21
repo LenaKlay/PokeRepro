@@ -241,12 +241,16 @@ You must also give a file name which clearly explains what is inside the analysi
 
 
 Then, you can write code for analysis and comments (**never forget that commenting is the basis of any reproducible workflow ;)**)!  
-<span style="color: grey;">For example, we will call this new analysis script "01_clean_data.R"</span>
-
-COMPLETE HERE AND SAY WHAT IS INSIDE AND THAT IT CAN BE MORE COMPLICATED AND THAT HERE IT IS A REALLY SIMPLE EXAMPLE BUT MOST OF THE TIME IT AS SEVERAL ROWS which call or not functions coded by the owner of the research compendium
+<span style="color: grey;">In this analysis, the code is really short and just call the function we just coded as you can see below: </span>
 
 
+![First R analysis script](images/Ranalysis1.PNG){width=700px}
 
+
+As we just said, it is a very very simple example: most of the time, the script has several lines which call or not one or several function coded by the owner of the research compendium... or not! Just keep in mind that you gather in such a script the coding stuff for **a given analysis**.
+
+
+So yay! First R analysis created! Now, you have to create as many functions and as many analysis as needed in your Research Compendium and then, have a look at the [Create an automatised workflow: using make.R or the targets package tutorial](https://poke-reproducibility.netlify.app/2021/11/29/create-an-automatised-workflow-using-make.r-or-the-targets-package/).
 
 
 
