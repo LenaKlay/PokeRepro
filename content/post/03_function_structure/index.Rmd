@@ -257,7 +257,9 @@ So yay! First R analysis created! Now, you have to create as many functions and 
 ## 6 - Create new functions and new analysis scripts
 
 
+In this Research Compendium, we have created three other R functions: 
 
+* two for preparing data and plotting
 
 Now let's say that you have to create a function to plot something. Because this function isn't link with data manipulation we will create a new script R. We will call it **02_plot_function.R**
 
