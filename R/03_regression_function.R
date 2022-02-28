@@ -24,7 +24,9 @@
 #' @export
 #'
 #' @examples
-regression_attack_weight <- function(suitable.df){
+#' 
+
+regression.attack.weight <- function(suitable.df){
   model1 <- lm(attack ~ weight_kg, poke)
   save(model1, file = here::here("outputs","04_regression_weight_attack.RData"))
   coefmodel1 <- as.data.frame(summary(lm(attack ~ weight_kg, poke))$coefficient)
