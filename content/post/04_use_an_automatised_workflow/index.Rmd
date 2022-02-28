@@ -150,3 +150,11 @@ The `make.R` file is now finished for our Pikachu Project! If you want to re-run
 
 ## B - Using <span style="color: purple;">the targets package</span> 
 
+
+
+The goal of the <span style="color: purple;">the targets package</span> is to automatise the workflow while taking into account the dependencies between the different steps. It can be used **when the workflow is not linear** (on the contrary of the use of the `make.R` file). Using the <span style="color: purple;">the targets package</span>, you can **create a map of the links** between the different steps and **only rerun steps which changes since the last run**! Awesome, don't you think?! It is thus a very usefull thing to use when working with big data. 
+
+*Mettre une photo de Pikachu detective ou avec un paquet dans la main*
+
+
+
