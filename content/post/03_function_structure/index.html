@@ -168,20 +168,25 @@ In this function <code>pokeclean</code>, we do not have any other inputs so we w
 </div>
 <div id="create-new-functions-and-new-analysis-scripts" class="section level2">
 <h2>6 - Create new functions and new analysis scripts</h2>
-<p>In this Research Compendium, we have created three other R functions:</p>
+<p>In this Research Compendium, we have created three other R functions saved in
+the <code>R</code> folder of the Research Compendium:</p>
 <ul>
-<li>two for preparing data and plotting</li>
+<li><p>one for cleaning a pokemon dataframe
+(<code>prep.pokeplot()</code> function)</p></li>
+<li><p>one for plotting the frequence pokemons’s types and relationships between attack
+capacities and pokemon’s weight according to Pokemon’s generation given two
+pokemon datasets (<code>poke.plot01()</code> function)</p></li>
+<li><p>one for computing the linear regression model of attack ~ weight
+(<code>regression.attack.weight()</code> function)</p></li>
 </ul>
-<p>Now let’s say that you have to create a function to plot something. Because this function isn’t link with data manipulation we will create a new script R. We will call it <strong>02_plot_function.R</strong></p>
-<p>We will create another function but this time it will concern.
--on creer une function dans le dossier R “01_clean_data_function”
--dans analysis on creer “01_clean_data.R”.</p>
-<p>-on creer une function dans le dossier R “02_plot_function.R”
--dans analysis on creer “02_plot.R”</p>
-<p>-dans analysis on creer “03_which_type.R”
--dans ouputs on creer “03_which_type_barplot.png”<br />
--dans ouputs on creer “03_which_type_camemmbert.png”</p>
-<p>-dans analysis on creer “04_regression_weight_attack.R”
--dans ouputs on creer “04_regression_weight_attack.png”
--dans ouputs on creer “04_regression_weight_attack.RDATA”</p>
+<p>And created two associated analysis scripts saved in
+the <code>analysis</code> folder of the Research Compendium::</p>
+<ul>
+<li><p>one for plotting the correlation between weight and attack using
+<code>prep.pokeplot()</code> and <code>poke.plot01()</code> functions</p></li>
+<li><p>one for computing the linear regression model of attack ~ weight using
+the <code>regression.attack.weight()</code> function</p></li>
+</ul>
+<p>You can have a look at these functions and analysis script to be sure to fully
+understand the function structure and their use!</p>
 </div>

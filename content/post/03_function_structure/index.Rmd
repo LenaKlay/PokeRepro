@@ -257,34 +257,30 @@ So yay! First R analysis created! Now, you have to create as many functions and 
 ## 6 - Create new functions and new analysis scripts
 
 
-In this Research Compendium, we have created three other R functions: 
+In this Research Compendium, we have created three other R functions saved in
+the `R` folder of the Research Compendium: 
 
-* two for preparing data and plotting
+* one for cleaning a pokemon dataframe
+(`prep.pokeplot()` function)
 
-Now let's say that you have to create a function to plot something. Because this function isn't link with data manipulation we will create a new script R. We will call it **02_plot_function.R**
+* one for plotting the frequence pokemons's types and relationships between attack 
+capacities and pokemon's weight according to Pokemon's generation given two 
+pokemon datasets (`poke.plot01()` function)
+* one for computing the linear regression model of attack ~ weight 
+(`regression.attack.weight()` function)
 
-```{r, eval=FALSE}
 
-```
+And created two associated analysis scripts saved in
+the `analysis` folder of the Research Compendium::
+
+* one for plotting the correlation between weight and attack using 
+`prep.pokeplot()` and `poke.plot01()` functions
+
+* one for computing the linear regression model of attack ~ weight using 
+the `regression.attack.weight()` function
 
 
+You can have a look at these functions and analysis script to be sure to fully
+understand the function structure and their use! 
 
-We will create another function but this time it will concern. 
--on creer une function dans le dossier R “01_clean_data_function”
--dans analysis on creer “01_clean_data.R”. 
 
--on creer une function dans le dossier R “02_plot_function.R”
--dans analysis on creer “02_plot.R”
-
--dans analysis on creer “03_which_type.R” 
--dans ouputs on creer “03_which_type_barplot.png”  
--dans ouputs on creer “03_which_type_camemmbert.png”  
- 
--dans analysis on creer “04_regression_weight_attack.R” 
--dans ouputs on creer “04_regression_weight_attack.png” 
--dans ouputs on creer “04_regression_weight_attack.RDATA”
-
-```{r, eval=FALSE, echo=FALSE}
-poke <- read.csv("~/Desktop/PHD1/Formation/Reproductibility/PokeRepro/data/pokemon.csv")
-a <- as.data.frame(table(poke$type1))
-```
