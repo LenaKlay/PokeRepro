@@ -96,9 +96,16 @@ source(here::here(&quot;analysis&quot;, &quot;02_plot.R&quot;))</code></pre>
 <img src="{{< blogdown/postref >}}index_files/images/make_R_capture.PNG" width="400" alt="" />
 <p class="caption">So far, that’s what your make.R file looks like!</p>
 </div>
+<p><br></p>
 </div>
 <div id="b---using-the-targets-package" class="section level2">
 <h2>B - Using <span style="color: purple;">the targets package</span></h2>
 <p>The goal of the <span style="color: purple;">the targets package</span> is to automatise the workflow while taking into account the dependencies between the different steps. It can be used <strong>when the workflow is not linear</strong> (on the contrary of the use of the <code>make.R</code> file). Using the <span style="color: purple;">the targets package</span>, you can <strong>create a map of the links</strong> between the different steps and <strong>only rerun steps which changes since the last run</strong>! Awesome, don’t you think?! It is thus a very usefull thing to use when working with big data.</p>
-<p><em>Mettre une photo de Pikachu detective ou avec un paquet dans la main</em></p>
+<div class="figure">
+<img src="{{< blogdown/postref >}}index_files/images/pikachu_detective.jpg" width="300" alt="" />
+<p class="caption">From Vie de Geek</p>
+</div>
+<p>The use of the <span style="color: purple;">the targets package</span> depends on a file (similar to the <code>make.R</code>) which you will call to re-reun all your analysis. So let’s create this new file!</p>
+<pre class="r"><code># create the new file at the project root
+file.create(&quot;_target.R&quot;)</code></pre>
 </div>

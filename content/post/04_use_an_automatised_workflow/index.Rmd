@@ -148,13 +148,23 @@ The `make.R` file is now finished for our Pikachu Project! If you want to re-run
 
 ![So far, that's what your make.R file looks like!](index_files/images/make_R_capture.PNG){width=400px}
 
+<br>
+
 ## B - Using <span style="color: purple;">the targets package</span> 
 
 
 
 The goal of the <span style="color: purple;">the targets package</span> is to automatise the workflow while taking into account the dependencies between the different steps. It can be used **when the workflow is not linear** (on the contrary of the use of the `make.R` file). Using the <span style="color: purple;">the targets package</span>, you can **create a map of the links** between the different steps and **only rerun steps which changes since the last run**! Awesome, don't you think?! It is thus a very usefull thing to use when working with big data. 
 
-*Mettre une photo de Pikachu detective ou avec un paquet dans la main*
 
+![From Vie de Geek](index_files/images/pikachu_detective.jpg){width=300px}
+
+
+The use of the <span style="color: purple;">the targets package</span> depends on a file (similar to the `make.R`) which you will call to re-reun all your analysis. So let's create this new file!
+
+```{r, eval = FALSE}
+# create the new file at the project root
+file.create("_target.R")
+```
 
 
