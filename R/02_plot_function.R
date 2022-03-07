@@ -8,10 +8,7 @@
 ##
 ## Date Created: 2020-12-13
 ##
-## Notes:
-## This script create 2 outputs, a linear model in a .RData and coefficient's linear model in a .csv
-## 
-## Email: thisismyemail@goratatac.fr
+## Email: hereyoucan@putyouremail.fr
 ##
 ## ------------------------------------------------------------------------------------------------------------
 
@@ -33,7 +30,7 @@
 
 prep.pokeplot <- function(poke_cleaned){
   
-  # create a dataframe ... 
+  # create a subset of the dataframe
   pokebytype <- as.data.frame(table(poke_cleaned$type1))
   colnames(pokebytype)[colnames(pokebytype)=="Var1"] <- "type"
   

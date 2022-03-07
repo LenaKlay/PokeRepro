@@ -1,6 +1,6 @@
 ## ------------------------------------------------------------------------------------------------------------
 ##
-## Script name: 04_regression_function.R
+## Script name: 03_regression.R
 ##
 ## Purpose of script: perform a linear regression between weight and attack
 ##
@@ -12,9 +12,9 @@
 ## This script create 2 outputs, a linear model in a .RData and coefficient's linear model in a .csv
 ## 
 ## Copyright (c) Erwan Harscouet
-## Email: thisismyemail@goratatac.fr
+## Email: hereyoucan@putyouremail.fr
 ##
 ## ------------------------------------------------------------------------------------------------------------
 
-regression.attack.weight()
+regression.attack.weight(suitable_df = pokedatacleaned)
 
