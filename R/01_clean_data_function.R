@@ -1,17 +1,12 @@
 ## ------------------------------------------------------------------------------------------------------------
 ##
-## Purpose of script: perform a linear regression between weight and attack
-##
-## 01_clean_data_function.R
+## Script name: 01_clean_data_function.R
 ##
 ## Author: Erwan Harscouet
 ##
 ## Date Created: 2020-12-13
-##
-## Notes:
-## This script create 2 outputs, a linear model in a .RData and coefficient's linear model in a .csv
 ## 
-## Email: thisismyemail@goratatac.fr
+## Email: hereyoucan@putyouremail.fr
 ##
 ## ------------------------------------------------------------------------------------------------------------
 
@@ -22,17 +17,18 @@
 #' by removing the 3 first generations of pokemons, the japanese name and 
 #' classfication.  
 #'
-#' @param initial.df the pokemon dataset in a dataframe
+#' @param initial_df the pokemon dataset in a dataframe
 #'
-#' @return a dataframe with all informations about pokemons except for the 
-#' first three generations, pokemons japanese names and classification
+#' @return a dataframe that contain the information about pokemons but without the  
+#' japanese names and classification and only for the first three generations.
+#' 
 #' 
 #' @export
 #'
 
-
-pokeclean <- function(initial.df){
+pokeclean <- function(initial_df){
   
+  # remove the last pokemon generations and two columns
   pokedata <- pokedata[-which(pokedata$generation %in% c("4", "5", "6", "7")), ]
   pokedata <- pokedata[, -which(names(pokedata) %in% c("japanese_name", 
                                                        "classfication"))]

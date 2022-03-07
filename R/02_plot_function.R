@@ -37,20 +37,20 @@ prep.pokeplot <- function(poke_cleaned){
   pokebytype <- as.data.frame(table(poke_cleaned$type1))
   colnames(pokebytype)[colnames(pokebytype)=="Var1"] <- "type"
   
-  # rename the poke cleaned df so easier to call:
+  # rename the poke cleaned df so easier to call
   poke <- poke_cleaned
   
-  # gerentaion as factor:
+  # generation as factor
   poke$generation <- as.factor(poke$generation)
   
-  # ...
+  # remove rows with no weight information
   poke <- poke[complete.cases(poke$weight_kg), ]
   
-  # ...
+  # keep weight between 5% and 95% of the distribution
   poke <- poke[-which(poke$weight_kg < quantile(poke$weight_kg, probs = c(0.05, 0.95))[[1]]),]
   poke <- poke[-which(poke$weight_kg > quantile(poke$weight_kg, probs = c(0.05, 0.95))[[2]]),]
   
-  # create the return list and return it:
+  # create the return list and return it
   return(list(df1 = pokebytype, df2 = poke))
   
 }
