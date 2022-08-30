@@ -93,16 +93,20 @@ poke.plot01 <- function(pokebytype, poke, save){
   
   # Save image if asked:
   if (save == TRUE) {
+    
     ggplot2::ggsave(filename="02_plot_function_general_plot.png", 
                     plot=p3, 
                     path = here::here("outputs/"), 
                     width=2500, height=2500, units="px",
                     bg = NULL)
+    
   }
   
   # Return the image if not saved:
   if (save == FALSE) {
+    
     return(p3)
+    
   }
 
 }

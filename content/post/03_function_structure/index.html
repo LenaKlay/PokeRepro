@@ -175,9 +175,20 @@ the <code>R</code> folder of the Research Compendium:</p>
 (<code>prep.pokeplot()</code> function)</p></li>
 <li><p>one for plotting the frequence pokemons’s types and relationships between attack
 capacities and pokemon’s weight according to Pokemon’s generation given two
-pokemon datasets (<code>poke.plot01()</code> function)</p></li>
-<li><p>one for computing the linear regression model of attack ~ weight
-(<code>regression.attack.weight()</code> function)</p></li>
+pokemon datasets (<code>poke.plot01()</code> function). What is interesting in this function is
+that we used a <code>save</code> argument which can be set to <code>TRUE</code> or <code>FALSE</code> to save or not
+the plot in the <span style="color: aquamarine;">outputs</span> folder. It is really
+easy to do so, you can have a look at the associated code in the <code>poke.plot01</code> function:
+in this function we used the <code>ggsave</code> function from the <code>ggplot2</code> package but you can
+use whatever function you want:</p></li>
+</ul>
+<div class="figure">
+<img src="images/save_arg.jpg" width="700" alt="" />
+<p class="caption">How to save a graph/table according to a save argument</p>
+</div>
+<ul>
+<li>one for computing the linear regression model of attack ~ weight
+(<code>regression.attack.weight()</code> function)</li>
 </ul>
 <p>And created two associated analysis scripts saved in
 the <code>analysis</code> folder of the Research Compendium::</p>
