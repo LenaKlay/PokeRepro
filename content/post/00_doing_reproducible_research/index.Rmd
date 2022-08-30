@@ -12,7 +12,7 @@ tags: ["Reproducible_Research"]
 This website is the result of a project made during a teaching unit done by the 
 [FRB-CESAB](https://www.fondationbiodiversite.fr/en/about-the-foundation/le-cesab/)
 in Montpellier (December 2021). All informations given in this website are
-based on the [toolbox](https://frbcesab.github.io/datatoolbox/) done for the teaching.
+based on the [toolbox](https://rdatatoolbox.github.io/) done for the teaching.
 
 
 This website is about coding in a reproducible workflow **using R** and is especially made for ecological studies but most concepts can be used for any study.
