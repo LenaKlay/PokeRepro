@@ -250,7 +250,7 @@ Then, you can write code for analysis and comments (**never forget that commenti
 As we just said, it is a very very simple example: most of the time, the script has several lines which call or not one or several function coded by the owner of the research compendium... or not! Just keep in mind that you gather in such a script the coding stuff for **a given analysis**.
 
 
-So yay! First R analysis created! Now, you have to create as many functions and as many analysis as needed in your Research Compendium and then, have a look at the [Create an automatised workflow: using make.R or the targets package tutorial](https://poke-reproducibility.netlify.app/2021/11/29/create-an-automatised-workflow-using-make.r-or-the-targets-package/).
+So yay! First R analysis created! Now, you have to create as many functions and as many analysis as needed in your Research Compendium and then, have a look at the [Create an automatised workflow: using make.R tutorial](https://poke-reproducibility.netlify.app/2021/11/29/create-an-automatised-workflow-using-make.r/).
 
 
 
