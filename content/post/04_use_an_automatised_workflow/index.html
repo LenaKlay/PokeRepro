@@ -1,5 +1,5 @@
 ---
-title: "Create an automatised workflow: using make.R or the targets package "
+title: "Create an automatised workflow: using make.R"
 author: "Camille Magneville"
 date: 2021-11-29
 categories: ["R"]
@@ -25,8 +25,8 @@ worklow is linear that is to say if one step leads to another unique one)</span>
 <p>In this tutorial, we will see the two methods starting with the <code>make.R</code> file.
 <strong>We assumed that you have already done the</strong> <em>03 - Create and define your first R function and analysis script</em></p>
 </div>
-<div id="a---using-the-make.r-file" class="section level2">
-<h2>A - Using the <code>make.R</code> file</h2>
+<div id="using-the-make.r-file" class="section level2">
+<h2>Using the <code>make.R</code> file</h2>
 <p>You have to create a <code>make.R</code> file on the project root, for instance by using
 <span style="color: purple;">the file.create() function</span> or by using
 <em>File &gt; New File &gt; Rscript</em> if using RStudio and then saving the file on the
@@ -96,16 +96,4 @@ source(here::here(&quot;analysis&quot;, &quot;02_plot.R&quot;))</code></pre>
 <img src="{{< blogdown/postref >}}index_files/images/make_R_capture.PNG" width="400" alt="" />
 <p class="caption">So far, that’s what your make.R file looks like!</p>
 </div>
-<p><br></p>
-</div>
-<div id="b---using-the-targets-package" class="section level2">
-<h2>B - Using <span style="color: purple;">the targets package</span></h2>
-<p>The goal of the <span style="color: purple;">the targets package</span> is to automatise the workflow while taking into account the dependencies between the different steps. It can be used <strong>when the workflow is not linear</strong> (on the contrary of the use of the <code>make.R</code> file). Using the <span style="color: purple;">the targets package</span>, you can <strong>create a map of the links</strong> between the different steps and <strong>only rerun steps which changes since the last run</strong>! Awesome, don’t you think?! It is thus a very usefull thing to use when working with big data.</p>
-<div class="figure">
-<img src="{{< blogdown/postref >}}index_files/images/pikachu_detective.jpg" width="300" alt="" />
-<p class="caption">From Vie de Geek</p>
-</div>
-<p>The use of the <span style="color: purple;">the targets package</span> depends on a file (similar to the <code>make.R</code>) which you will call to re-reun all your analysis. So let’s create this new file!</p>
-<pre class="r"><code># create the new file at the project root
-file.create(&quot;_target.R&quot;)</code></pre>
 </div>

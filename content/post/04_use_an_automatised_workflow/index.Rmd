@@ -1,5 +1,5 @@
 ---
-title: "Create an automatised workflow: using make.R or the targets package "
+title: "Create an automatised workflow: using make.R"
 author: "Camille Magneville"
 date: 2021-11-29
 categories: ["R"]
@@ -30,7 +30,7 @@ In this tutorial, we will see the two methods starting with the `make.R` file.
 
 
 
-## A - Using the `make.R` file
+## Using the `make.R` file
 
 
 You have to create a `make.R` file on the project root, for instance by using 
