@@ -288,7 +288,8 @@ the `analysis` folder of the Research Compendium::
 the `regression.attack.weight()` function
 
 
-You can have a look at these functions and analysis script to be sure to fully
+You can have a look at these [functions](https://github.com/LenaKlay/PokeRepro/tree/main/R) and [analysis](https://github.com/LenaKlay/PokeRepro/tree/main/analysis) scripts to be sure to fully
 understand the function structure and their use! 
+
 
 
